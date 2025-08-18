@@ -6,16 +6,15 @@ import Link from "next/link";
 import Image from "next/image";
 
 const NAV = [
-  { href: "/", label: "Home" },
-  { href: "/deals", label: "Deals" },
-  { href: "/about", label: "About" },
+  { id: 1, href: "/", label: "Home" },
+  { id: 2, href: "/sobre", label: "Sobre" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
+    <header className="sticky top-0 z-50 bg-blue-500 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand */}
         <div className="flex items-center gap-3">
@@ -23,13 +22,10 @@ export default function Header() {
             <Image
               src="/logo.png"
               alt="FlyTripAlert"
-              width={28}
-              height={28}
+              width={150}
+              height={150}
               priority
             />
-            <span className="font-semibold text-lg tracking-tight">
-              FlyTripAlert
-            </span>
           </Link>
         </div>
 
@@ -47,9 +43,9 @@ export default function Header() {
           <Link
             href="/signup"
             className="rounded-2xl px-3.5 py-2 text-sm font-medium shadow hover:shadow-md transition
-                       bg-black text-white"
+                       bg-blue-900 text-white"
           >
-            Get alerts
+            Quero ser avisado
           </Link>
         </nav>
 
@@ -78,7 +74,7 @@ export default function Header() {
         <div className="px-4 py-3 space-y-2">
           {NAV.map((item) => (
             <Link
-              key={item.href}
+              key={item.id}
               href={item.href}
               onClick={() => setOpen(false)}
               className="block px-2 py-2 rounded hover:bg-black/5"
