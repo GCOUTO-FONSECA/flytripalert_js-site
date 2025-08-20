@@ -52,11 +52,13 @@ export default function Hero() {
   ];
 
   const [precoMax, setPrecoMax] = useState(10000);
+  {/* control if filter is active */}
+  const [showFilters, setShowFilters] = useState(false);
 
   return (
     
     <section className="relative w-full bg-blue-500 text-white">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:py-20 text-center">
+      <div className="mx-auto max-w-7xl pt-12 pb-0 sm:pt-16 sm:pb-0 text-center">
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
           Escolha o seu alerta favorito
@@ -74,53 +76,68 @@ export default function Hero() {
           Novidades em breve! Registre-se para ser avisado.
           Membros que registrarem-se manterão alertas premium gratuitos por 1 ano.
         </p>
-
-        {/* Form de filtros */}
-        <form
-          className="mt-8 w-full max-w-4xl mx-auto bg-white rounded-2xl shadow p-4 sm:p-6 text-gray-800"
-          onSubmit={(e) => e.preventDefault()}
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {menus.map((m) => (
-              <SelectField
-                key={m.id}
-                id={m.id}
-                label={m.label}
-                placeholder={m.placeholder}
-                options={m.options}
-              />
-            ))}
-
-          </div>
-          {/* Dummy input para Preço */}
-          <div className="mt-6 items-center justify-center mx-auto ">
-          <RangeField
-            id="precoMax"
-            label="Preço máx."
-            min={50}
-            max={10000}
-            step={10}
-            value={precoMax}
-            onChange={setPrecoMax}
-            prefix="R$ "
-          />
-          </div>
-          <div className="mt-6 flex justify-center gap-3">
+        <section className="relative w-full bg-blue-500 text-white">
+          <div className="mx-auto max-w-7xl px-4 py-16 sm:py-20 text-center">
+            {/* Botão de abrir filtros */}
             <button
-              type="submit"
-              className="rounded-2xl px-5 py-2 font-medium bg-blue-500 text-white hover:bg-blue-600 transition"
+              onClick={() => setShowFilters(!showFilters)}
+              className="rounded-2xl px-6 py-3 font-semibold text-white 
+             bg-gradient-to-r from-blue-700 via-blue-700 to-blue-700
+             shadow-lg hover:shadow-xl 
+             hover:from-blue-600 hover:via-blue-600 hover:to-blue-600
+             transition-all duration-300 "
             >
-              Aplicar filtros
+              {showFilters ? "Fechar filtros" : "Selecionar filtros"}
             </button>
-            <button
-              type="reset"
-              className="rounded-2xl px-5 py-2 font-medium border hover:bg-gray-100 transition"
-            >
-              Limpar
-            </button>
-          </div>
-        </form>
+            {/* Form de filtros */}
+            {showFilters && (
+              <form
+                className="mt-8 w-full max-w-4xl mx-auto bg-white rounded-2xl shadow p-4 sm:p-6 text-gray-800"
+                onSubmit={(e) => e.preventDefault()}
+              >
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {menus.map((m) => (
+                    <SelectField
+                      key={m.id}
+                      id={m.id}
+                      label={m.label}
+                      placeholder={m.placeholder}
+                      options={m.options}
+                    />
+                  ))}
 
+                </div>
+                {/* Dummy input para Preço */}
+                <div className="mt-6 items-center justify-center mx-auto ">
+                <RangeField
+                  id="precoMax"
+                  label="Preço máx."
+                  min={50}
+                  max={10000}
+                  step={10}
+                  value={precoMax}
+                  onChange={setPrecoMax}
+                  prefix="R$ "
+                />
+                </div>
+                <div className="mt-6 flex justify-center gap-3">
+                  <button
+                    type="submit"
+                    className="rounded-2xl px-5 py-2 font-medium bg-blue-500 text-white hover:bg-blue-600 transition"
+                  >
+                    Aplicar filtros
+                  </button>
+                  <button
+                    type="reset"
+                    className="rounded-2xl px-5 py-2 font-medium border hover:bg-gray-100 transition"
+                  >
+                    Limpar
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
+        </section>
       </div>
     </section>
   );
