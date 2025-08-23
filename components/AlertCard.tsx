@@ -32,28 +32,28 @@ export default function AlertCard(p: Props) {
           </span>
         </h3>
 
-      {/* MOBILE */}
+      {/* CONFIGURE CARD FOR MOBILE */}
       <div className="sm:hidden grid grid-cols-[max-content_1fr] gap-x-2 gap-y-0.5 items-baseline">
         {/* origem (linha inteira) */}
         <h3 className="col-span-2 text-base font-semibold leading-tight">{p.from}</h3>
 
-        {/* para: (mesma linha, cinza e menor) */}
+        {/* para: (same line, grey, lower)) */}
         <span className="text-xs text-slate-500 font-normal">para:</span>
         <h3 className="text-base font-semibold leading-tight">{p.to}</h3>
 
-        {/* Ida / Volta seguem o grid */}
+        {/* Ida / Volta in the same grid*/}
         <span className="text-xs text-slate-500 font-normal">Ida:</span>
         <span className="text-sm text-slate-600">{p.depart}</span>
 
         <span className="text-xs text-slate-500 font-normal">Volta:</span>
         <span className="text-sm text-slate-600">{p.return}</span>
       </div>
-      {/* Avaliação */}
+      {/* Score */}
       <span className={`sm:hidden inline-flex w-fit px-2 py-0.5 mt-2 rounded-full text-white font-medium ${ratingColor[p.rating]}`}>
         {p.rating}
       </span>
 
-      {/* DESKTOP (sm+): inline com separadores e sem rótulos */}
+      {/* CONFIGURE CARD FOR DESKTOP (sm+) */}
       <p className="hidden sm:block text-sm text-slate-600 mt-1
                     [&>span]:inline sm:[&>span]:whitespace-nowrap
                       sm:[&>span:not(:last-child)]:after:content-['•']
