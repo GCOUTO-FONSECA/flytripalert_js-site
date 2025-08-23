@@ -51,13 +51,15 @@ export default function Hero() {
     },
   ];
 
-  const [precoMax, setPrecoMax] = useState(10000);
+  {/* Preço */}
+  const [currency, precoMinimo, precoMaximo] = ["R$", 0, 50000];
+  const [precoMax, setPrecoMax] = useState(precoMaximo);
   {/* control if filter is active */}
   const [showFilters, setShowFilters] = useState(false);
 
   return (
-    
-    <section className="relative w-full bg-blue-500 text-white">
+
+    <section className="relative w-full bg-[linear-gradient(to_bottom,_theme(colors.blue.500)_0%,_theme(colors.blue.500)_60%,_theme(colors.gray.100)_100%)] text-white">
       <div className="mx-auto max-w-7xl pt-12 pb-0 sm:pt-16 sm:pb-0 text-center">
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
@@ -69,15 +71,8 @@ export default function Hero() {
           A Fly rastreia milhares de voos diariamente enquanto você descansa
         </p>
         
-        <div className="h-2"> </div>
-        
-        {/* Mensagem temporária */}
-        <p className="mt-2 text-sm sm:text-base opacity-90">
-          Novidades em breve! Registre-se para ser avisado.
-          Membros que registrarem-se manterão alertas premium gratuitos por 1 ano.
-        </p>
-        <section className="relative w-full bg-blue-500 text-white">
-          <div className="mx-auto max-w-7xl px-4 py-16 sm:py-20 text-center">
+        <section className="relative w-full text-white">
+          <div className="mx-auto max-w-7xl px-4 py-8 sm:py-20 text-center">
             {/* Botão de abrir filtros */}
             <button
               onClick={() => setShowFilters(!showFilters)}
@@ -85,7 +80,7 @@ export default function Hero() {
              bg-gradient-to-r from-blue-700 via-blue-700 to-blue-700
              shadow-lg hover:shadow-xl 
              hover:from-blue-600 hover:via-blue-600 hover:to-blue-600
-             transition-all duration-300 "
+             transition-all duration-300"
             >
               {showFilters ? "Fechar filtros" : "Selecionar filtros"}
             </button>
@@ -107,21 +102,22 @@ export default function Hero() {
                   ))}
 
                 </div>
-                {/* Dummy input para Preço */}
+                {/* input para Preço */}
                 <div className="mt-6 items-center justify-center mx-auto ">
                 <RangeField
                   id="precoMax"
                   label="Preço máx."
-                  min={50}
-                  max={10000}
+                  min={precoMinimo}
+                  max={precoMaximo}
                   step={10}
                   value={precoMax}
                   onChange={setPrecoMax}
-                  prefix="R$ "
+                  prefix={currency + " "}
                 />
                 </div>
                 <div className="mt-6 flex justify-center gap-3">
                   <button
+                    onClick={() => {setShowFilters(!showFilters)}}
                     type="submit"
                     className="rounded-2xl px-5 py-2 font-medium bg-blue-500 text-white hover:bg-blue-600 transition"
                   >

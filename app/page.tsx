@@ -1,22 +1,24 @@
+// app/page.tsx
 "use client";
-
 import Hero from "@/components/Hero";
+import AlertsSection from "@/components/AlertsSection";
 
 export default function Home() {
-  return(
-    <div className="flex w-full">
-      {/* blue Rectangle below */}
-      <main className="flex-1 bg-white flex flex-col items-center justify-center">
-        <div className="w-full bg-blue-500 shadow-lg"></div>
+  return (
+    <div className="w-full">
+      {/* HERO (faixa azul) */}
+      <section className="w-full bg-[linear-gradient(to_bottom,_theme(colors.blue.500)_0%,_theme(colors.blue.500)_60%,_theme(colors.gray.100)_100%)]">
+        <div className="mx-auto max-w-7xl px-4">
+          <Hero />
+        </div>
+      </section>
 
-        {/* page body */}
-        <section className="w-full h-500 bg-white">
-          <main>
-            <Hero />
-          </main>
-          {/* Aqui você coloca o próximo conteúdo */}
-        </section>
-      </main>
+      {/* ALERTAS (logo abaixo do Hero) */}
+      <section id="alerts" className="w-full bg-gray-100">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:py-12">
+          <AlertsSection />
+        </div>
+      </section>
     </div>
   );
 }
