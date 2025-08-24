@@ -1,3 +1,4 @@
+"use client";
 // components/Hero.tsx
 
 import SelectField from "./SelectField";
@@ -51,10 +52,10 @@ export default function Hero() {
     },
   ];
 
-  {/* Preço */}
+  // Preço
   const [currency, precoMinimo, precoMaximo] = ["R$", 0, 50000];
   const [precoMax, setPrecoMax] = useState(precoMaximo);
-  {/* control if filter is active */}
+  // control if filter is active
   const [showFilters, setShowFilters] = useState(false);
 
   return (

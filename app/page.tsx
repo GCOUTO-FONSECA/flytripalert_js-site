@@ -1,10 +1,16 @@
 // app/page.tsx
-"use client";
 import Hero from "@/components/Hero";
 import AlertsSection from "@/components/AlertsSection";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function Home({
+  searchParams,
+  }: {
+    searchParams: { [key: string]: string | string[] | undefined };
+  }) {
+  const raw = Number(searchParams?.page ?? 1);
+  const page = Number.isFinite(raw) && raw > 0 ? raw : 1;
+
   return (
     <div className="w-full">
       {/* HERO (faixa azul) */}
@@ -17,7 +23,7 @@ export default function Home() {
       {/* ALERTAS (logo abaixo do Hero) */}
       <section id="alerts" className="w-full bg-gray-100">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:py-12">
-          <AlertsSection />
+          <AlertsSection page={page} searchParams={searchParams} />
         </div>
       </section>
 

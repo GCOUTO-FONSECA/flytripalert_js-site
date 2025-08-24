@@ -1,4 +1,3 @@
-import { useSearchParams } from "next/navigation";
 import AlertCard from "./AlertCard";
 import Pagination from "./Pagination";
 
@@ -47,12 +46,17 @@ const mock = [
     {from: "Rio de Janeiro", to: "Belo Horizonte", price: 1700, depart: "15 jul 2026", return: "27 jul 2026", days: 12, rating: "excelente", found_at: "5 Agosto 2025", link: "flytripalert.com"},
 ];
 
-export default function AlertsSection() {
+export default function AlertsSection({
+    page,
+    searchParams,
+    }: {
+    page: number;
+    searchParams?: { [key: string]: string | string[] | undefined };
+    }) {
     const total = mock.length;
-    const searchParams = useSearchParams();
-    const raw = Number(searchParams.get("page") || 1);
+
     const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
-    const currentPage = Math.min(Math.max(raw, 1), totalPages);
+    const currentPage = Math.min(Math.max(page, 1), totalPages);
 
     const start = (currentPage - 1) * PAGE_SIZE;
     const visible = mock.slice(start, start + PAGE_SIZE);
@@ -79,6 +83,7 @@ export default function AlertsSection() {
         totalItems={total}
         currentPage={currentPage}
         pageSize={PAGE_SIZE}
+        searchParams={searchParams}
     />
     </div>
   );

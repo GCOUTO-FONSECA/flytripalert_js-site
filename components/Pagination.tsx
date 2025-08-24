@@ -1,13 +1,12 @@
-"use client";
-
+// components/Pagination.tsx
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
 
 type Props = {
   totalItems: number;
   currentPage: number;
   pageSize?: number;     // default: 20
-  siblingCount?: number; // how many numbers around current page
+  siblingCount?: number; // quantos números ao redor da página atual
+  searchParams?: { [key: string]: string | string[] | undefined };
 };
 
 export default function Pagination({
@@ -15,82 +14,80 @@ export default function Pagination({
   currentPage,
   pageSize = 20,
   siblingCount = 1,
+  searchParams = {},
 }: Props) {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
   const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
   if (totalPages <= 1) return null;
 
-  // keep other query params
-  const createPageURL = (page: number) => {
-    const params = new URLSearchParams(searchParams as any);
-    if (page <= 1) params.delete("page");
-    else params.set("page", String(page));
-    return `${pathname}?${params.toString()}`;
+  // Constrói o href preservando outros filtros da URL
+  const makeHref = (page: number) => {
+    const params = new URLSearchParams();
+
+    for (const [k, v] of Object.entries(searchParams)) {
+      if (k === "page") continue; // vamos sobrescrever
+      if (Array.isArray(v)) v.forEach((vv) => params.append(k, vv));
+      else if (typeof v === "string") params.set(k, v);
+    }
+
+    if (page >= 1) params.set("page", String(page)); // na página 1 omitimos
+    const qs = params.toString();
+    return qs ? `?${qs}` : ""; // relativo ao path atual
   };
 
   const clamp = (n: number, min: number, max: number) => Math.max(min, Math.min(max, n));
 
-  // Build page list: 1 … (left..right) … last
-  const pages: (number | "...")[] = [];
+  // lista de páginas: 1 … (left..right) … last
   const first = 1;
   const last = totalPages;
   const left = clamp(currentPage - siblingCount, first, last);
   const right = clamp(currentPage + siblingCount, first, last);
 
-  pages.push(first);
-  if (left > first + 1) pages.push("...");
+  const items: (number | "...")[] = [];
+  items.push(first);
+  if (left > first + 1) items.push("...");
   for (let p = left; p <= right; p++) {
-    if (p !== first && p !== last) pages.push(p);
+    if (p !== first && p !== last) items.push(p);
   }
-  if (right < last - 1) pages.push("...");
-  if (last !== first) pages.push(last);
+  if (right < last - 1) items.push("...");
+  if (last !== first) items.push(last);
 
   const isFirst = currentPage <= 1;
   const isLast = currentPage >= totalPages;
 
   return (
     <nav className="mt-6 flex items-center justify-center gap-1 text-sm" aria-label="Paginação">
-      {/* Prev */}
       <Link
-        href={createPageURL(clamp(currentPage - 1, 1, totalPages))}
+        href={makeHref(clamp(currentPage - 1, 1, totalPages))}
         aria-disabled={isFirst}
-        className={`px-3 py-1 rounded-full border border-slate-200 hover:bg-slate-50 ${
-          isFirst ? "opacity-40 pointer-events-none" : ""
-        }`}
+        className={`px-3 py-1 rounded-full border border-slate-200 hover:bg-slate-50 ${isFirst ? "opacity-40 pointer-events-none" : ""}`}
       >
         Anterior
       </Link>
 
-      {/* Numbers */}
       <ul className="flex items-center gap-1">
-        {pages.map((p, i) =>
-          p === "..." ? (
-            <li key={`dots-${i}`} className="px-2 text-slate-400 select-none">…</li>
+        {items.map((it, idx) =>
+          it === "..." ? (
+            <li key={`dots-${idx}`} className="px-2 text-slate-400 select-none">…</li>
           ) : (
-            <li key={p}>
+            <li key={it}>
               <Link
-                href={createPageURL(p)}
-                aria-current={p === currentPage ? "page" : undefined}
-                className={`min-w-8 px-3 py-1 rounded-full border border-slate-200 hover:bg-slate-50 text-center ${
-                  p === currentPage ? "bg-blue-600 text-white border-blue-600" : ""
+                href={makeHref(it)}
+                aria-current={it === currentPage ? "page" : undefined}
+                className={`min-w-8 px-3 py-1 rounded-full border border-slate-200 hover:bg-slate-50 hover:text-black text-center ${
+                  it === currentPage ? "bg-blue-600 text-white border-blue-600" : ""
                 }`}
               >
-                {p}
+                {it}
               </Link>
             </li>
           )
         )}
       </ul>
 
-      {/* Next */}
       <Link
-        href={createPageURL(clamp(currentPage + 1, 1, totalPages))}
+        href={makeHref(clamp(currentPage + 1, 1, totalPages))}
         aria-disabled={isLast}
-        className={`px-3 py-1 rounded-full border border-slate-200 hover:bg-slate-50 ${
-          isLast ? "opacity-40 pointer-events-none" : ""
-        }`}
+        className={`px-3 py-1 rounded-full border border-slate-200 hover:bg-slate-50 hover:text-black ${isLast ? "opacity-40 pointer-events-none" : ""}`}
       >
         Próximo
       </Link>
