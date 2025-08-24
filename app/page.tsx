@@ -23,7 +23,7 @@ export default async function Home({
       </section>
 
       {/* ALERTAS (logo abaixo do Hero) */}
-      <section id="alerts" className="w-full bg-gray-100">
+      <section id="alerts" className="w-full bg-gray-100 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:py-12">
           <Suspense fallback={<div className="py-8 text-center text-slate-500">Carregando alertas…</div>}>
             <AlertsSection page={page} searchParams={sp} />

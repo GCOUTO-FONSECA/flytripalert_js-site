@@ -31,7 +31,7 @@ export default function Pagination({
 
     if (page >= 1) params.set("page", String(page)); // na página 1 omitimos
     const qs = params.toString();
-    return qs ? `?${qs}` : ""; // relativo ao path atual
+    return qs ? `?${qs}#alerts` : `#alerts`;
   };
 
   const clamp = (n: number, min: number, max: number) => Math.max(min, Math.min(max, n));
