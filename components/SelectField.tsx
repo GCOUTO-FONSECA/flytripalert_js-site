@@ -10,6 +10,7 @@ type SelectFieldProps = {
   onChange?: (value: string) => void;
   className?: string;
   name?: string;
+  value?: string;
 };
 
 export default function SelectField({
@@ -22,7 +23,12 @@ export default function SelectField({
   onChange,
   className = "",
   name,
+  value,
 }: SelectFieldProps) {
+  const controlledProps = value !== undefined
+    ? { value } // controlado
+    : { defaultValue }; // não-controlado
+
   return (
     <div className={`flex flex-col ${className}`}>
       <label htmlFor={id} className="text-sm font-medium">{label}</label>
