@@ -2,6 +2,7 @@
 "use client";
 import Hero from "@/components/Hero";
 import AlertsSection from "@/components/AlertsSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -19,6 +20,9 @@ export default function Home() {
           <AlertsSection />
         </div>
       </section>
+
+      {/* FOOTER */}
+      <Footer />
     </div>
   );
 }

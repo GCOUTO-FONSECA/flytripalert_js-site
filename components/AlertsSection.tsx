@@ -7,7 +7,7 @@ type Alert = {
   days: number; rating: "bom negócio" | "excelente" | "imperdível"; found_at?: string;
 };
 
-const PAGE_SIZE = 5;
+const PAGE_SIZE = 3;
 
 const mock = [
     {from: "São Paulo", to: "Rio de Janeiro", price: 2290, depart: "11 jul 2026", return: "31 jul 2026", days: 20, rating: "imperdível", found_at: "1 Agosto 2025", link: "flytripalert.com"},
