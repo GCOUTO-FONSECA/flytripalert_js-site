@@ -1,16 +1,18 @@
 import Link from "next/link";
 
 type Props = {
-    from: string;
-    to: string;
-    price: number;
-    depart: string;
-    return: string;
-    days: number;
-    rating: string;
-    found_at: string;
-    link: string;
-}
+  id: string; 
+  from: string; 
+  to: string; 
+  price: number; 
+  currency: string; 
+  depart: string; 
+  return: string;
+  days: number; 
+  rating: "bom negócio" | "excelente" | "imperdível"; 
+  found_at: string; 
+  link: string;
+};
 
 const ratingColor: Record<Props["rating"], string> = {
     "bom negócio": "bg-green-500 text-green-800",
@@ -67,22 +69,24 @@ export default function AlertCard(p: Props) {
       </div>
     <div className="self-center flex flex-col items-center justify-center text-center">
     <div className="text-xl sm:text-2xl font-bold leading-tight">
-        R$ {p.price}
+        {p.currency} {p.price}
         <p className="text-slate-600 font-light text-[0.5rem] sm:text-xs md:text-sm lg:text-[0.7rem]">Preço em {p.found_at}</p>
     </div>
 
     <Link
-        href={`https://${p.link}`}
-        className="mt-2 inline-flex items-center justify-center gap-1
-                bg-gradient-to-r from-blue-600 to-blue-500
-                px-3 py-1.5 text-sm font-semibold text-white shadow-sm
-                transition hover:from-blue-600 hover:to-indigo-500 hover:shadow-md
-                focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600
-                active:translate-y-px"
-        aria-label="Abrir este achado em flytripalert.com"
+      href={`${p.link}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-2 inline-flex items-center justify-center gap-1
+          bg-gradient-to-r from-blue-600 to-blue-500
+          px-3 py-1.5 text-sm font-semibold text-white shadow-sm
+          transition hover:from-blue-600 hover:to-indigo-500 hover:shadow-md
+          focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600
+          active:translate-y-px"
+      aria-label="Abrir este achado"
     >
-        Abrir oferta
-        <span aria-hidden="true">→</span>
+      Abrir oferta
+      <span aria-hidden="true">→</span>
     </Link>
     </div>
     </article>

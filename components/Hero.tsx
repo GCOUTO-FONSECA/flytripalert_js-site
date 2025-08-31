@@ -3,67 +3,12 @@ import { useRouter, useSearchParams } from "next/navigation";
 import SelectField from "./SelectField";
 import RangeField from "./RangeField";
 import { useEffect, useMemo, useState } from "react";
+import deals from './../data/deals.json';
+import { buildMenusFromDeals } from './../lib/menu-from-deals';
 
 /** 1) Menus estáveis (fora do componente) */
 // MENUS: definição dos menus de filtro disponíveis, fora do componente para estabilidade
-const MENUS = [
-  {
-    id: "origem", // filtro de origem do voo
-    label: "Origem",
-    options: [
-      { value: "all", label: "Todos" },
-      { value: "par", label: "Paris" },
-      { value: "sao", label: "São Paulo" },
-      { value: "poa", label: "Porto Alegre" },
-    ],
-    defaultValue: "all",
-  },
-  {
-    id: "destino", // filtro de destino do voo
-    label: "Destino",
-    options: [
-      { value: "all", label: "Todos" },
-      { value: "lis", label: "Lisboa" },
-      { value: "mia", label: "Miami" },
-      { value: "jmk", label: "Mykonos" },
-    ],
-    defaultValue: "all",
-  },
-  {
-    id: "periodo", // filtro de período de busca
-    label: "Período",
-    options: [
-      { value: "all", label: "Todos" },
-      { value: "24h", label: "Últimas 24h" },
-      { value: "3d", label: "Até 3 dias" },
-      { value: "7d", label: "Última semana" },
-      { value: "30d", label: "Último mês" },
-    ],
-    defaultValue: "all",
-  },
-  {
-    id: "classe", // filtro de classe do voo
-    label: "Classe",
-    options: [
-      { value: "all", label: "Todos" },
-      { value: "economica", label: "Econômica" },
-      { value: "executiva", label: "Executiva" },
-      { value: "primeira", label: "Primeira" },
-    ],
-    defaultValue: "all",
-  },
-  {
-    id: "avaliacao", // filtro de avaliação da oferta
-    label: "Avaliação",
-    options: [
-      { value: "all", label: "Todos" },
-      { value: "bom", label: "Bom negócio" },
-      { value: "excelente", label: "Excelente" },
-      { value: "imperdivel", label: "Imperdível" },
-    ],
-    defaultValue: "all",
-  },
-];
+const MENUS = buildMenusFromDeals(deals as any);
 
 /** Função pura: monta filtros a partir da string da URL */
 function buildFiltersFromParams(qs: string) {

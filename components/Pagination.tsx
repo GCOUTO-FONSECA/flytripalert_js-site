@@ -24,7 +24,6 @@ export default function Pagination({
     const params = new URLSearchParams();
 
     for (const [k, v] of Object.entries(searchParams)) {
-      console.log(k, v);
       if (k === "page") continue; // vamos sobrescrever
       if (Array.isArray(v)) v.forEach((vv) => params.append(k, vv));
       else if (typeof v === "string") params.set(k, v);
