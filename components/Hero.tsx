@@ -6,7 +6,6 @@ import { useEffect, useMemo, useState } from "react";
 import deals from './../data/deals.json';
 import { buildMenusFromDeals } from './../lib/menu-from-deals';
 
-/** 1) Menus estáveis (fora do componente) */
 // MENUS: definição dos menus de filtro disponíveis, fora do componente para estabilidade
 const MENUS = buildMenusFromDeals(deals as any);
 

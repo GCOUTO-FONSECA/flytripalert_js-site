@@ -1,6 +1,7 @@
 import AlertCard from "./AlertCard";
 import Pagination from "./Pagination";
 import deals from "@/data/deals.json";
+import toSlug from "@/lib/menu-from-deals";
 
 type Alert = {
   id: string; 
@@ -14,6 +15,7 @@ type Alert = {
   rating: "bom negócio" | "excelente" | "imperdível"; 
   found_at: string; 
   link: string;
+  class: string;
 };
 
 // definir tamanho das paginas
@@ -26,15 +28,40 @@ export default function AlertsSection({
     searchParams,
     }: {
     page: number;
-    searchParams?: { [key: string]: string | string[] | undefined };
+    searchParams?: { [key: string]: string | undefined };
     }) {
-    const total = alertList.length;
-    
+    // ler filtros do URL
+    const origem = searchParams?.origem;
+    const periodo = searchParams?.periodo;
+    const classe = searchParams?.classe;
+    const avaliacao = searchParams?.avaliacao;
+
+    // aplicar filtros
+    let filteredAlerts: Alert[] = alertList;
+
+    if (origem && origem !== "all") {
+        console.log("origem: " + origem);
+        filteredAlerts = filteredAlerts.filter((alert) => toSlug(alert.from) === toSlug(origem));
+    }
+    if (periodo && periodo !== "all") {
+        console.log("periodo: " + periodo);
+        filteredAlerts = filteredAlerts.filter((alert) => toSlug(alert.found_at) === toSlug(periodo));
+    }
+    if (classe && classe !== "all") {
+        console.log("classe: " + classe);
+        filteredAlerts = filteredAlerts.filter((alert) => toSlug(alert.class) === toSlug(classe));
+    }
+    if (avaliacao && avaliacao !== "all") {
+        console.log("avaliacao: " + avaliacao);
+        filteredAlerts = filteredAlerts.filter((alert) => toSlug(alert.rating) === toSlug(avaliacao));
+    }
+
+    const total = filteredAlerts.length;
     const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
     const currentPage = Math.min(Math.max(page, 1), totalPages);
 
     const start = (currentPage - 1) * PAGE_SIZE;
-    const alertsVisible = alertList.slice(start, start + PAGE_SIZE);
+    const alertsVisible = filteredAlerts.slice(start, start + PAGE_SIZE);
 
     return (
     <div>

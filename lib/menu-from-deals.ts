@@ -25,7 +25,7 @@ export type Menu = {
 
 const PT = 'pt-BR';
 
-function toSlug(s: string) {
+export default function toSlug(s: string) {
   return s
     .toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // remove acentos
@@ -78,6 +78,7 @@ export function buildMenusFromDeals(deals: Deal[]): Menu[] {
       id: 'classe',
       label: 'Classe',
       options: [
+        { value: 'all', label: 'Todas' },
         { value: 'economica', label: 'Econômica' },
         { value: 'executiva', label: 'Executiva' },
         { value: 'primeira',  label: 'Primeira Classe' },
@@ -89,6 +90,7 @@ export function buildMenusFromDeals(deals: Deal[]): Menu[] {
       id: 'avaliacao',
       label: 'Avaliação',
       options: [
+        { value: 'all', label: 'Todas' },
         { value: 'bom', label: 'Bom negócio' },
         { value: 'excelente', label: 'Excelente' },
         { value: 'imperdivel',  label: 'Imperdível' },
