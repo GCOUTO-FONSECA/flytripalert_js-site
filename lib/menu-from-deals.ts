@@ -17,10 +17,10 @@ export type Deal = {
 
 export type Option = { value: string; label: string };
 export type Menu = {
-  id: 'origem' | 'destino' | 'periodo' | 'classe' | 'avaliacao';
+  id: 'origem' | 'destino' | 'periodo' | 'classe' | 'avaliacao' | 'precoRange';
   label: string;
   options: Option[];
-  defaultValue: string;
+  defaultValue: string | string[];
 };
 
 const PT = 'pt-BR';
@@ -51,9 +51,8 @@ function toOptions(values: string[]) {
 
 export function buildMenusFromDeals(deals: Deal[]): Menu[] {
   const origins      = uniqSorted(deals.map((d) => d.from));
-  const destinations = uniqSorted(deals.map((d) => d.to));
-  const ratings      = uniqSorted(deals.map((d) => d.rating));
-  const classes      = uniqSorted(deals.map((d) => d.class));
+  const maxPrice     = Math.max(0, ...deals.map((d) => d.price ?? 0));
+  const minPrice     = 0;
 
   const menus: Menu[] = [
     {
@@ -69,8 +68,7 @@ export function buildMenusFromDeals(deals: Deal[]): Menu[] {
         { value: 'all', label: 'Todos' },
         { value: '24h', label: 'Últimas 24h' },
         { value: '3d',  label: 'Até 3 dias' },
-        { value: '7d',  label: 'Última semana' },
-        { value: '30d', label: 'Último mês' },
+        { value: '7d',  label: 'Última semana' }
       ],
       defaultValue: 'all',
     },
@@ -98,6 +96,12 @@ export function buildMenusFromDeals(deals: Deal[]): Menu[] {
       ],
       defaultValue: 'all',
     },
+    {
+      id: "precoRange",
+      label: "Faixa de preço",
+      options: [],
+      defaultValue: [String(minPrice), String(maxPrice)]
+    }
   ];
 
   return menus;

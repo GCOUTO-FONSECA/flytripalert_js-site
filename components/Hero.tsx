@@ -14,7 +14,7 @@ function buildFiltersFromParams(qs: string) {
   const sp = new URLSearchParams(qs);
   const next: Record<string, string> = {};
   MENUS.forEach((m) => {
-    next[m.id] = sp.get(m.id) ?? (m.defaultValue ?? "");
+    next[m.id] = sp.get(m.id) ?? (String(m.defaultValue) ?? "");
   });
   return next;
 }
@@ -30,11 +30,6 @@ export default function Hero() {
   // Menus de filtro (mantidos estáveis com useMemo)
   const menus = useMemo(() => MENUS, []);
 
-  // Definição dos limites de preço
-  const [currency, precoMinimo, precoMaximo] = ["R$", 0, 50000];
-  // Estado do preço máximo selecionado
-  const [precoMax, setPrecoMax] = useState(precoMaximo);
-
   // Estado para controlar se o painel de filtros está aberto
   const [showFilters, setShowFilters] = useState(false);
 
@@ -42,6 +37,12 @@ export default function Hero() {
   const [filters, setFilters] = useState<Record<string, string>>(
     () => buildFiltersFromParams(spString)
   );
+
+  // Definição dos limites de preço
+  const precoLimits = filters["precoRange"].split(",");
+  const [currency, precoMinimo, precoMaximo] = ["R$", Number(precoLimits[0]), Number(precoLimits[1])];
+  // Estado do preço máximo selecionado
+  const [precoMax, setPrecoMax] = useState(precoMaximo);
 
   // Atualiza os filtros sempre que o painel é aberto e a URL muda
   useEffect(() => {
@@ -52,6 +53,8 @@ export default function Hero() {
   // Aplica os filtros selecionados, atualizando a URL
   function applyFilters() {
     const sp = new URLSearchParams(spString);
+    // Mantém a página 1 ao aplicar novos filtros
+    sp.set("page", "1");
 
     // Atualiza cada filtro nos parâmetros da URL
     menus.forEach((m) => {
@@ -79,7 +82,7 @@ export default function Hero() {
 
   // Renderização do componente
   return (
-    <section className="relative w-full bg-[linear-gradient(to_bottom,_theme(colors.blue.500)_0%,_theme(colors.blue.500)_60%,_theme(colors.gray.100)_100%)] text-white">
+    <section className="relative w-full bg-[linear-gradient(to_bottom,_theme(colors.blue.500)_0%,_theme(colors.blue.500)_70%,_theme(colors.gray.100)_100%)] text-white">
       <div className="mx-auto max-w-7xl pt-12 pb-0 sm:pt-16 sm:pb-0 text-center">
         {/* Headline principal */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
@@ -92,7 +95,7 @@ export default function Hero() {
         </p>
 
         <section className="relative w-full text-white">
-          <div className="mx-auto max-w-7xl px-4 py-8 sm:py-20 text-center">
+          <div className="mx-auto max-w-7xl px-4 pt-8 sm:pt-12 pb-5 text-center">
             {/* Botão para abrir/fechar painel de filtros */}
             <button
               onClick={() => setShowFilters(!showFilters)}
@@ -113,17 +116,20 @@ export default function Hero() {
               >
                 {/* Campos de seleção dos filtros */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {menus.map((m) => (
-                    <SelectField
-                      key={m.id}
-                      id={m.id}
-                      label={m.label}
-                      options={m.options}
+                  {menus.map((m) => {
+                    if (m.id === "precoRange") return null; // Pula o filtro de faixa de preço
+                    return (
+                      <SelectField
+                        key={m.id}
+                        id={m.id}
+                        label={m.label}
+                        options={m.options}
                       // Campo controlado: value e onChange
                       value={filters[m.id]}
-                      onChange={(v) => setFilters((f) => ({ ...f, [m.id]: v }))}
-                    />
-                  ))}
+                        onChange={(v) => setFilters((f) => ({ ...f, [m.id]: v }))}
+                      />
+                    );
+                  })}
                 </div>
 
                 {/* Campo de seleção do preço máximo */}

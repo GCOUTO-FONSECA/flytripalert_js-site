@@ -35,25 +35,38 @@ export default function AlertsSection({
     const periodo = searchParams?.periodo;
     const classe = searchParams?.classe;
     const avaliacao = searchParams?.avaliacao;
+    const precoMax = searchParams?.precoMax;
 
     // aplicar filtros
     let filteredAlerts: Alert[] = alertList;
 
     if (origem && origem !== "all") {
-        console.log("origem: " + origem);
         filteredAlerts = filteredAlerts.filter((alert) => toSlug(alert.from) === toSlug(origem));
     }
     if (periodo && periodo !== "all") {
-        console.log("periodo: " + periodo);
-        filteredAlerts = filteredAlerts.filter((alert) => toSlug(alert.found_at) === toSlug(periodo));
+        const currentDate = new Date();
+        filteredAlerts = filteredAlerts.filter((alert) => {
+            const alertDate = new Date(alert.found_at);
+            switch (periodo) {
+                case "24h":
+                    return alertDate >= new Date(currentDate.getTime() - 24 * 60 * 60 * 1000);
+                case "3d":
+                    return alertDate >= new Date(currentDate.getTime() - 3 * 24 * 60 * 60 * 1000);
+                case "7d":
+                    return alertDate >= new Date(currentDate.getTime() - 7 * 24 * 60 * 60 * 1000);
+                default:
+                    return true;
+            }
+        });
     }
     if (classe && classe !== "all") {
-        console.log("classe: " + classe);
         filteredAlerts = filteredAlerts.filter((alert) => toSlug(alert.class) === toSlug(classe));
     }
     if (avaliacao && avaliacao !== "all") {
-        console.log("avaliacao: " + avaliacao);
         filteredAlerts = filteredAlerts.filter((alert) => toSlug(alert.rating) === toSlug(avaliacao));
+    }
+    if (precoMax) {
+        filteredAlerts = filteredAlerts.filter((alert) => alert.price <= Number(precoMax));
     }
 
     const total = filteredAlerts.length;
@@ -75,19 +88,26 @@ export default function AlertsSection({
         />
     </div>
     {/* lista de cards */}
-    <div className="grid grid-cols-1 gap-4 sm:gap-6">
-        {alertsVisible.map((a, i) => (
-        <AlertCard key={start + i} {...a} />
-        ))}
-    </div>
-
-    {/* paginação */}
-    <Pagination
+    <div>
+      {total === 0 ? (
+        <div className="py-8 text-center text-slate-500">
+          Nenhum alerta encontrado para os filtros selecionados.
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 gap-4 sm:gap-6">
+          {alertsVisible.map((a, i) => (
+            <AlertCard key={start + i} {...a} />
+          ))}
+        </div>
+      )}
+      {/* paginação */}
+      <Pagination
         totalItems={total}
         currentPage={currentPage}
         pageSize={PAGE_SIZE}
         searchParams={searchParams}
-    />
+      />
+    </div>
     </div>
   );
 }

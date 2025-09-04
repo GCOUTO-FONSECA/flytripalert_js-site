@@ -19,7 +19,7 @@ export default async function Home({
   return (
     <div className="w-full">
       {/* HERO (faixa azul) */}
-      <section className="w-full bg-[linear-gradient(to_bottom,_theme(colors.blue.500)_0%,_theme(colors.blue.500)_60%,_theme(colors.gray.100)_100%)]">
+      <section className="w-full bg-[linear-gradient(to_bottom,_theme(colors.blue.500)_0%,_theme(colors.blue.500)_70%,_theme(colors.gray.100)_100%)]">
         <div className="mx-auto max-w-7xl px-4">
           <Hero />
         </div>
@@ -27,7 +27,7 @@ export default async function Home({
 
       {/* ALERTAS (logo abaixo do Hero) */}
       <section id="alerts" className="w-full bg-gray-100 scroll-mt-24">
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:py-12">
+        <div className="mx-auto max-w-7xl px-4 pt-1 sm:pt-1 pb-8 sm:pb-12">
           {/* Suspense mostra "Carregando alertas…" enquanto os alertas não carregam */}
           <Suspense fallback={<div className="py-8 text-center text-slate-500">Carregando alertas…</div>}>
             {/* Mostra os alertas, passando a página e os parâmetros de busca */}
