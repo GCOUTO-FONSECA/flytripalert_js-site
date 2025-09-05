@@ -12,7 +12,6 @@ type Alert = {
   depart: string; 
   return: string;
   days: number; 
-  rating: "bom negócio" | "excelente" | "imperdível"; 
   found_at: string; 
   link: string;
   class: string;
@@ -61,9 +60,6 @@ export default function AlertsSection({
     }
     if (classe && classe !== "all") {
         filteredAlerts = filteredAlerts.filter((alert) => toSlug(alert.class) === toSlug(classe));
-    }
-    if (avaliacao && avaliacao !== "all") {
-        filteredAlerts = filteredAlerts.filter((alert) => toSlug(alert.rating) === toSlug(avaliacao));
     }
     if (precoMax) {
         filteredAlerts = filteredAlerts.filter((alert) => alert.price <= Number(precoMax));

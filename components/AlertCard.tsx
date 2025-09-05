@@ -9,21 +9,48 @@ type Props = {
   depart: string; 
   return: string;
   days: number; 
-  rating: "bom negócio" | "excelente" | "imperdível"; 
   found_at: string; 
   link: string;
 };
 
-const ratingColor: Record<Props["rating"], string> = {
-    "bom negócio": "bg-green-500 text-green-800",
-    "excelente": "bg-blue-500 text-blue-800",
-    "imperdível": "bg-purple-600 text-purple-800",
+const ratingColor = (found_at: string): string => {
+  const diffdays: number = elapsedDays(found_at);
+  if (diffdays <= 1) return "bg-green-500 text-white"; // verde se até 1 dia
+  if (diffdays > 1 && diffdays <= 3) return "bg-yellow-400 text-gray-800"; // amarelo se até 3 dias
+  if (diffdays > 3 && diffdays <= 7) return "bg-orange-400 text-white"; // laranja se até 7 dias
+  if (diffdays > 7) return "bg-gray-300 text-gray-800"; // cinza se mais de 7 dias
+  else return "bg-gray-300 text-gray-800"; // padrão cinza
+};
+
+const elapsedDays = (alertFoundAt: string): number => {
+  const foundAtDate = new Date(alertFoundAt);
+  const currentDate = new Date();
+  const diffTime = Math.abs(currentDate.getTime() - foundAtDate.getTime());
+  return Math.trunc(diffTime / (1000 * 60 * 60 * 24));
+};
+
+const openLinkColor = (found_at: string): string => {
+  const color = ratingColor(found_at);
+  console.log(color.split("-")[1]);
+  return color.split("-")[1];
+};
+
+const gradientByColor: Record<string, string> = {
+  blue: "bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-500",
+  yellow: "bg-gradient-to-r from-yellow-400 to-yellow-400 hover:from-yellow-500 hover:to-yellow-300",
+  orange: "bg-gradient-to-r from-orange-400 to-orange-400 hover:from-orange-500 hover:to-orange-300",
+  green:"bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-500",
+  gray: "bg-gradient-to-r from-gray-400 to-gray-400 hover:from-gray-500 hover:to-gray-300",
 };
 
 export default function AlertCard(p: Props) {
+  const elapsedTime = elapsedDays(p.found_at);
+  const color = ratingColor(p.found_at);
+  const buttonColor = openLinkColor(p.found_at);
+  const gradient = gradientByColor[buttonColor] ?? gradientByColor.blue;
   return (
     <article className="rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-5 flex items-center gap-4 bg-white">
-      <div className={`h-3 w-3 rounded-full ${ratingColor[p.rating]}`} aria-label={p.rating} />
+      <div className={`h-3 w-3 rounded-full ${ratingColor(p.found_at)}`} aria-label={p.found_at} />
       <div className="flex-1">
         <h3 className="text-base sm:text-lg font-semibold leading-tight">
           {/* DESKTOP (sm+): from → to */}
@@ -51,8 +78,8 @@ export default function AlertCard(p: Props) {
         <span className="text-sm text-slate-600">{p.return}</span>
       </div>
       {/* Score */}
-      <span className={`sm:hidden inline-flex w-fit px-2 py-0.5 mt-2 rounded-full text-white font-medium ${ratingColor[p.rating]}`}>
-        {p.rating}
+      <span className={`sm:hidden inline-flex w-fit px-2 py-0.5 mt-2 rounded-full text-white font-medium ${color}`}>
+        {elapsedTime > 1 ? "Há " + elapsedTime.toString() + " dias" : "Hoje"}
       </span>
 
       {/* CONFIGURE CARD FOR DESKTOP (sm+) */}
@@ -62,8 +89,8 @@ export default function AlertCard(p: Props) {
                       sm:[&>span:not(:last-child)]:after:mx-1">
           <span>Ida: {p.depart}</span>
           <span>Volta: {p.return}</span>
-          <span className={`px-2 py-0.5 rounded-full text-white font-medium ${ratingColor[p.rating]} inline-flex w-fit`}>
-            {p.rating}
+          <span className={`px-2 py-0.5 rounded-full text-white font-medium ${color} inline-flex w-fit`}>
+            {elapsedTime > 1 ? "Há " + elapsedTime.toString() + " dias" : "Hoje"}
           </span>
         </p>
       </div>
@@ -77,15 +104,15 @@ export default function AlertCard(p: Props) {
       href={`${p.link}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="mt-2 inline-flex items-center justify-center gap-1
-          bg-gradient-to-r from-blue-600 to-blue-500
-          px-3 py-1.5 text-sm font-semibold text-white shadow-sm
-          transition hover:from-blue-600 hover:to-indigo-500 hover:shadow-md
-          focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600
-          active:translate-y-px"
+      className={`mt-2 inline-flex items-center justify-center gap-1
+      ${gradient}
+      px-3 py-1.5 text-sm font-semibold text-white shadow-sm
+      transition hover:shadow-md
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600
+      active:translate-y-px`}
       aria-label="Abrir este achado"
     >
-      Abrir oferta
+      Google Flights
       <span aria-hidden="true">→</span>
     </Link>
     </div>

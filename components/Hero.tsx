@@ -94,7 +94,7 @@ export default function Hero() {
           A Fly rastreia milhares de voos diariamente enquanto você descansa
         </p>
 
-        <section className="relative w-full text-white">
+        <section id="form" className="relative w-full text-white">
           <div className="mx-auto max-w-7xl px-4 pt-8 sm:pt-12 pb-5 text-center">
             {/* Botão para abrir/fechar painel de filtros */}
             <button
@@ -111,11 +111,11 @@ export default function Hero() {
             {/* Painel de filtros (formulário) */}
             {showFilters && (
               <form
-                className="mt-8 w-full max-w-4xl mx-auto bg-white border border-gray-400 rounded-2xl shadow p-4 sm:p-6 text-gray-800"
+                className="mt-8 w-full max-w-2xl mx-auto bg-white border border-gray-400 rounded-2xl shadow p-4 sm:p-6 text-gray-800"
                 onSubmit={(e) => e.preventDefault()} // Evita submit padrão
               >
                 {/* Campos de seleção dos filtros */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="items-center justify-center grid grid-cols-1 sm:flex lg:grid-cols-4 gap-4">
                   {menus.map((m) => {
                     if (m.id === "precoRange") return null; // Pula o filtro de faixa de preço
                     return (

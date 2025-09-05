@@ -9,7 +9,6 @@ export type Deal = {
   depart?: string;       // "30 Aug 2025"
   return?: string;       // "30 Aug 2025"
   days?: number;         // 10
-  rating?: string;       // "bom" | "excelente" | "imperdivel"
   found_at?: string;     // "30 Aug 2025"
   link?: string;
   class: string;      // "economica" | "executiva" | "primeira"
@@ -17,7 +16,7 @@ export type Deal = {
 
 export type Option = { value: string; label: string };
 export type Menu = {
-  id: 'origem' | 'destino' | 'periodo' | 'classe' | 'avaliacao' | 'precoRange';
+  id: 'origem' | 'destino' | 'periodo' | 'classe' | 'precoRange';
   label: string;
   options: Option[];
   defaultValue: string | string[];
@@ -80,18 +79,6 @@ export function buildMenusFromDeals(deals: Deal[]): Menu[] {
         { value: 'economica', label: 'Econômica' },
         { value: 'executiva', label: 'Executiva' },
         { value: 'primeira',  label: 'Primeira Classe' },
-
-      ],
-      defaultValue: 'all',
-    },
-    {
-      id: 'avaliacao',
-      label: 'Avaliação',
-      options: [
-        { value: 'all', label: 'Todas' },
-        { value: 'bom', label: 'Bom negócio' },
-        { value: 'excelente', label: 'Excelente' },
-        { value: 'imperdivel',  label: 'Imperdível' },
 
       ],
       defaultValue: 'all',
