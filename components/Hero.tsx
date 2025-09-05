@@ -73,6 +73,15 @@ export default function Hero() {
     setShowFilters(false); // Fecha o painel de filtros
   }
 
+  // open or close filters
+  function toggleFilters() {
+    const params = new URLSearchParams();
+    const qs = params.toString();
+    setShowFilters((prev) => !prev);
+    console.log(qs);
+    router.replace(qs ? `?${qs}#form` : `#form`);
+  }
+
   // Reseta todos os filtros para o padrão
   function resetFilters() {
     router.replace("?", { scroll: false }); // Limpa a URL
@@ -98,7 +107,7 @@ export default function Hero() {
           <div className="mx-auto max-w-7xl px-4 pt-8 sm:pt-12 pb-5 text-center">
             {/* Botão para abrir/fechar painel de filtros */}
             <button
-              onClick={() => setShowFilters(!showFilters)}
+              onClick={toggleFilters}
               className="rounded-2xl px-6 py-3 font-semibold text-white 
                 bg-gradient-to-r from-blue-700 via-blue-700 to-blue-700
                 shadow-lg hover:shadow-xl 

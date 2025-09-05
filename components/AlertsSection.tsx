@@ -33,7 +33,6 @@ export default function AlertsSection({
     const origem = searchParams?.origem;
     const periodo = searchParams?.periodo;
     const classe = searchParams?.classe;
-    const avaliacao = searchParams?.avaliacao;
     const precoMax = searchParams?.precoMax;
 
     // aplicar filtros
