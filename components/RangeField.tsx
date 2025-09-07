@@ -49,7 +49,7 @@ export default function RangeField({
         min={min}
         max={max}
         step={step}
-        value={inner}
+        defaultValue={inner}
         onChange={(e) => setBoth(Number(e.target.value))}
         className="mt-2 max-w-xl accent-blue-500"
       />

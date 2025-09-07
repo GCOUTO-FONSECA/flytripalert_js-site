@@ -4,6 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { SiInstagram } from "react-icons/si";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -31,9 +32,10 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="rounded-2xl px-3.5 py-2 text-sm font-medium shadow hover:shadow-md transition
-                       bg-pink-600 text-white"
+            className="inline-flex gap-2 items-center rounded-2xl px-3.5 py-2 text-sm font-medium shadow hover:shadow-md transition
+                       bg-pink-600 text-white border-2 border-transparent hover:bg-pink-400"
           >
+            <SiInstagram className="h-4 w-4" />
             Siga no Instagram
           </Link>
         </nav>
@@ -67,8 +69,9 @@ export default function Header() {
             rel="noopener noreferrer"
             aria-label="Instagram"
             onClick={() => setOpen(false)}
-            className="block px-2 py-2 rounded bg-black text-white text-center"
+            className="inline-flex gap-2 items-center px-2 py-2 rounded bg-black text-white text-center border-2 border-transparent hover:bg-pink-600 transition w-full"
           >
+            <SiInstagram className="h-4 w-4 mr-2" />
             Siga no Instagram
           </Link>
         </div>

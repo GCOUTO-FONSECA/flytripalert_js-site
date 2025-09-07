@@ -31,7 +31,7 @@ export default function Hero() {
   const menus = useMemo(() => MENUS, []);
 
   // Estado para controlar se o painel de filtros está aberto
-  const [showFilters, setShowFilters] = useState(false);
+  const [showFilters, setShowFilters] = useState(() => true);
 
   // Estado local dos filtros, inicializado a partir da URL
   const [filters, setFilters] = useState<Record<string, string>>(
@@ -79,7 +79,12 @@ export default function Hero() {
     const qs = params.toString();
     setShowFilters((prev) => !prev);
     console.log(qs);
-    router.replace(qs ? `?${qs}#form` : `#form`);
+    // apenas em desktop, usar scroll: false. em mobile usar scroll true
+    if (window.innerWidth >= 640) {
+      router.replace(qs ? `?${qs}#form` : `#form`, { scroll: false });
+    } else {
+      router.replace(qs ? `?${qs}#form` : `#form`);
+    }
   }
 
   // Reseta todos os filtros para o padrão
@@ -120,7 +125,7 @@ export default function Hero() {
             {/* Painel de filtros (formulário) */}
             {showFilters && (
               <form
-                className="mt-8 w-full max-w-2xl mx-auto bg-white border border-gray-400 rounded-2xl shadow p-4 sm:p-6 text-gray-800"
+                className="mt-8 w-full max-w-2xl mx-auto bg-white border border-blue-600 rounded-2xl shadow p-4 sm:p-6 text-gray-800"
                 onSubmit={(e) => e.preventDefault()} // Evita submit padrão
               >
                 {/* Campos de seleção dos filtros */}
