@@ -15,10 +15,11 @@ type Props = {
 
 const ratingColor = (found_at: string): string => {
   const diffdays: number = elapsedDays(found_at);
-  if (diffdays <= 1) return "bg-green-500 text-white"; // verde se até 1 dia
-  if (diffdays > 1 && diffdays <= 3) return "bg-orange-400 text-white"; // laranja se até 3 dias
-  if (diffdays > 3 && diffdays <= 7) return "bg-yellow-400 text-gray-800"; // amarelo se até 7 dias
-  if (diffdays > 7) return "bg-gray-300 text-gray-800"; // cinza se mais de 7 dias
+  console.log(diffdays);
+  if (diffdays < 1) return "bg-green-500 text-white"; // verde se até 1 dia
+  if (diffdays >= 1 && diffdays < 3) return "bg-orange-400 text-white"; // laranja se até 3 dias
+  if (diffdays >= 3 && diffdays < 7) return "bg-yellow-400 text-gray-800"; // amarelo se até 7 dias
+  if (diffdays >= 7) return "bg-gray-300 text-gray-800"; // cinza se mais de 7 dias
   else return "bg-gray-300 text-gray-800"; // padrão cinza
 };
 
@@ -31,7 +32,6 @@ const elapsedDays = (alertFoundAt: string): number => {
 
 const openLinkColor = (found_at: string): string => {
   const color = ratingColor(found_at);
-  console.log(color.split("-")[1]);
   return color.split("-")[1];
 };
 
@@ -42,6 +42,11 @@ const gradientByColor: Record<string, string> = {
   green:"bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-500",
   gray: "bg-gradient-to-r from-gray-400 to-gray-400 hover:from-gray-500 hover:to-gray-300",
 };
+
+function translateDate(dateStr: string): string {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+}
 
 export default function AlertCard(p: Props) {
   const elapsedTime = elapsedDays(p.found_at);
@@ -79,7 +84,7 @@ export default function AlertCard(p: Props) {
       </div>
       {/* Score */}
       <span className={`sm:hidden inline-flex w-fit px-2 py-0.5 mt-2 rounded-full text-white font-medium ${color}`}>
-        {elapsedTime > 1 ? "Há " + elapsedTime.toString() + " dias" : "Hoje"}
+        {elapsedTime >= 1 ? elapsedTime === 1 ? "Há 1 dia" : "Há " + elapsedTime.toString() + " dias" : "Hoje"}
       </span>
 
       {/* CONFIGURE CARD FOR DESKTOP (sm+) */}
@@ -90,14 +95,14 @@ export default function AlertCard(p: Props) {
           <span>Ida: {p.depart}</span>
           <span>Volta: {p.return}</span>
           <span className={`px-2 py-0.5 rounded-full text-white font-medium ${color} inline-flex w-fit`}>
-            {elapsedTime > 1 ? "Há " + elapsedTime.toString() + " dias" : "Hoje"}
+            {elapsedTime >= 1 ? elapsedTime === 1 ? "Há 1 dia" : "Há " + elapsedTime.toString() + " dias" : "Hoje"}
           </span>
         </p>
       </div>
     <div className="self-center flex flex-col items-center justify-center text-center">
     <div className="text-xl sm:text-2xl font-bold leading-tight">
         {p.currency} {p.price}
-        <p className="text-slate-600 font-light text-[0.5rem] sm:text-xs md:text-sm lg:text-[0.7rem]">Preço em {p.found_at}</p>
+        <p className="text-slate-600 font-light text-[0.5rem] sm:text-xs md:text-sm lg:text-[0.7rem]">Preço em {translateDate(p.found_at)}</p>
     </div>
 
     <Link

@@ -5,11 +5,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const NAV = [
-  { id: 1, href: "/", label: "Home" },
-  { id: 2, href: "/sobre", label: "Sobre" },
-];
-
 export default function Header() {
   const [open, setOpen] = useState(false);
 
@@ -31,21 +26,15 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6">
-          {NAV.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm hover:opacity-80"
-            >
-              {item.label}
-            </Link>
-          ))}
           <Link
-            href="/signup"
+            href="https://www.instagram.com/flytripalert/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
             className="rounded-2xl px-3.5 py-2 text-sm font-medium shadow hover:shadow-md transition
-                       bg-blue-900 text-white"
+                       bg-pink-600 text-white"
           >
-            Quero ser avisado
+            Siga no Instagram
           </Link>
         </nav>
 
@@ -72,22 +61,15 @@ export default function Header() {
         aria-label="Mobile menu"
       >
         <div className="px-4 py-3 space-y-2">
-          {NAV.map((item) => (
-            <Link
-              key={item.id}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className="block px-2 py-2 rounded hover:bg-black/5"
-            >
-              {item.label}
-            </Link>
-          ))}
           <Link
-            href="/signup"
+            href="https://www.instagram.com/flytripalert/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
             onClick={() => setOpen(false)}
             className="block px-2 py-2 rounded bg-black text-white text-center"
           >
-            Get alerts
+            Siga no Instagram
           </Link>
         </div>
       </div>

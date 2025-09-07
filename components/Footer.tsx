@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="-mt-16 h-[3px] bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400" />
 
       <div className="mx-auto max-w-7xl px-4 py-10">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between sm:gap-16 lg:gap-24">
           {/* brand + tagline */}
           <div>
             <Link href="/" className="text-xl font-bold tracking-tight text-blue-600">
@@ -21,7 +21,7 @@ export default function Footer() {
             <p className="mt-2 text-sm text-slate-600">
               Feito para viajantes inteligentes
             </p>
-            <div className="mt-4 flex items-center gap-3">
+            <div className="mt-4 flex items-center gap-3 text-center">
               <Link
                 href="https://instagram.com/flytripalert"
                 className="inline-flex items-center gap-2 text-sm hover:text-blue-600"
@@ -47,18 +47,6 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><Link href="/#alerts" className="hover:text-blue-600">Todos os alertas</Link></li>
               <li><Link href="/top" className="hover:text-blue-600">Achado do dia</Link></li>
-              <li><Link href="/como-funciona" className="hover:text-blue-600">Como funciona</Link></li>
-            </ul>
-          </nav>
-
-          {/* suporte / legal */}
-          <nav aria-label="Suporte" className="text-sm">
-            <h4 className="mb-3 font-semibold text-slate-900">Suporte</h4>
-            <ul className="space-y-2">
-              <li><Link href="/faq" className="hover:text-blue-600">FAQ</Link></li>
-              <li><Link href="/contato" className="hover:text-blue-600">Fale conosco</Link></li>
-              <li><Link href="/politica-de-privacidade" className="hover:text-blue-600">Política de privacidade</Link></li>
-              <li><Link href="/termos" className="hover:text-blue-600">Termos de uso</Link></li>
             </ul>
           </nav>
 
