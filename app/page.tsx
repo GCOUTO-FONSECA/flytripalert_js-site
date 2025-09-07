@@ -31,7 +31,12 @@ export default async function Home({
           {/* Suspense mostra "Carregando alertas…" enquanto os alertas não carregam */}
           <Suspense fallback={<div className="py-8 text-center text-slate-500">Carregando alertas…</div>}>
             {/* Mostra os alertas, passando a página e os parâmetros de busca */}
-            <AlertsSection page={page} searchParams={sp} />
+            <AlertsSection
+              page={page}
+              searchParams={Object.fromEntries(
+                Object.entries(sp).map(([k, v]) => [k, Array.isArray(v) ? v.join(",") : v])
+              )}
+            />
           </Suspense>
         </div>
       </section>
