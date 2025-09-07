@@ -6,7 +6,7 @@ type Props = {
   currentPage: number;
   pageSize?: number;     // default: 20
   siblingCount?: number; // quantos números ao redor da página atual
-  searchParams?: Promise<Record<string, string | string[] | undefined>>; 
+  searchParams?: { [key: string]: string | string[] | undefined }; 
 };
 
 export default function Pagination({
@@ -14,7 +14,7 @@ export default function Pagination({
   currentPage,
   pageSize = 20,
   siblingCount = 1,
-  searchParams = Promise.resolve({}),
+  searchParams = {},
 }: Props) {
   const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
   if (totalPages <= 1) return null;

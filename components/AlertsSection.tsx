@@ -27,13 +27,17 @@ export default function AlertsSection({
     searchParams,
     }: {
     page: number;
-    searchParams?: { [key: string]: string | undefined };
+    searchParams?: { [key: string]: string | string[] |undefined };
     }) {
     // ler filtros do URL
-    const origem = searchParams?.origem;
+    const origemRaw = searchParams?.origem;
     const periodo = searchParams?.periodo;
-    const classe = searchParams?.classe;
+    const classeRaw = searchParams?.classe;
     const precoMax = searchParams?.precoMax;
+
+    // Garantir que origem e classe sejam sempre string
+    const origem = Array.isArray(origemRaw) ? origemRaw[0] : origemRaw;
+    const classe = Array.isArray(classeRaw) ? classeRaw[0] : classeRaw;
 
     // aplicar filtros
     let filteredAlerts: Alert[] = alertList;
