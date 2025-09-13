@@ -80,10 +80,10 @@ export default function AlertCard(p: Props) {
 
         {/* Ida / Volta in the same grid*/}
         <span className="text-xs text-slate-500 font-normal">Ida:</span>
-        <span className="text-sm text-slate-600">{p.depart}</span>
+        <span className="text-sm text-slate-600">{translateDate(p.depart, 'pt-BR')}</span>
 
         <span className="text-xs text-slate-500 font-normal">Volta:</span>
-        <span className="text-sm text-slate-600">{p.return}</span>
+        <span className="text-sm text-slate-600">{translateDate(p.return, 'pt-BR')}</span>
       </div>
       {/* Score */}
       <span className={`sm:hidden inline-flex w-fit px-2 py-0.5 mt-2 rounded-full text-white font-medium ${color}`}>
