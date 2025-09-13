@@ -7,7 +7,7 @@ import Image from "next/image";
 import { SiInstagram } from "react-icons/si";
 
 const NAV = [
-  { id: 1, href: "/", label: "Todos os Alertas" },
+  { id: 1, href: "/#alerts", label: "Todos os Alertas" },
   { id: 2, href: "/?page=1&periodo=24h", label: "Alertas de hoje" },
 ];
 
