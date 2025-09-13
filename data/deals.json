@@ -1,5 +1,44 @@
 [
     {
+        "id": "br_sao_paulo-milan-13_sep_2025",
+        "from": "Sao Paulo",
+        "to": "Milan",
+        "price": 3180,
+        "currency": "R$",
+        "class": "Econômica",
+        "depart": "23 Nov 2025",
+        "return": "03 Dec 2025",
+        "days": 10,
+        "found_at": "13 Sep 2025",
+        "link": "https://www.google.com/travel/flights?q=flights+from+Sao Paulo+to+Milan+on+23 Nov 2025+return+on+03 Dec 2025+in+economy+class&curr=BRL"
+    },
+    {
+        "id": "br_sao_paulo-madrid-13_sep_2025",
+        "from": "Sao Paulo",
+        "to": "Madrid",
+        "price": 2690,
+        "currency": "R$",
+        "class": "Econômica",
+        "depart": "28 Feb 2026",
+        "return": "10 Mar 2026",
+        "days": 10,
+        "found_at": "13 Sep 2025",
+        "link": "https://www.google.com/travel/flights?q=flights+from+Sao Paulo+to+Madrid+on+28 Feb 2026+return+on+10 Mar 2026+in+economy+class&curr=BRL"
+    },
+    {
+        "id": "br_sao_paulo-porto-13_sep_2025",
+        "from": "Sao Paulo",
+        "to": "Porto",
+        "price": 3040,
+        "currency": "R$",
+        "class": "Econômica",
+        "depart": "04 Mar 2026",
+        "return": "14 Mar 2026",
+        "days": 10,
+        "found_at": "13 Sep 2025",
+        "link": "https://www.google.com/travel/flights?q=flights+from+Sao Paulo+to+Porto+on+04 Mar 2026+return+on+14 Mar 2026+in+economy+class&curr=BRL"
+    },
+    {
         "id": "br_recife-lisbon-11_sep_2025",
         "from": "Recife",
         "to": "Lisbon",
