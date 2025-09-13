@@ -156,19 +156,6 @@
         "link": "https://www.google.com/travel/flights?q=flights+from+Recife+to+Porto+on+25 May 2026+return+on+01 Jun 2026+in+economy+class&curr=BRL"
     },
     {
-        "id": "br_vitoria-madrid-11_sep_2025",
-        "from": "Vitoria",
-        "to": "Madrid (Spain)",
-        "price": 3750,
-        "currency": "R$",
-        "class": "Econômica",
-        "depart": "27 Apr 2026",
-        "return": "04 May 2026",
-        "days": 7,
-        "found_at": "11 Sep 2025",
-        "link": "https://www.google.com/travel/flights?q=flights+from+Vitoria+to+Madrid+on+27 Apr 2026+return+on+04 May 2026+in+economy+class&curr=BRL"
-    },
-    {
         "id": "br_brasilia-zurich-11_sep_2025",
         "from": "Brasilia",
         "to": "Zurich (Switzerland)",
