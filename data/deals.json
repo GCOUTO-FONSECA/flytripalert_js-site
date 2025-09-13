@@ -28,7 +28,7 @@
     {
         "id": "br_sao_paulo-punta_cana-13_sep_2025",
         "from": "Sao Paulo",
-        "to": "Punta Cana",
+        "to": "Punta Cana (Dominican Republic)",
         "price": 1460,
         "currency": "R$",
         "class": "Econômica",
@@ -41,7 +41,7 @@
     {
         "id": "br_belo_horizonte-lima-13_sep_2025",
         "from": "Belo Horizonte",
-        "to": "Lima",
+        "to": "Lima (Peru)",
         "price": 2200,
         "currency": "R$",
         "class": "Econômica",
@@ -54,7 +54,7 @@
     {
         "id": "br_sao_paulo-cancun-13_sep_2025",
         "from": "Sao Paulo",
-        "to": "Cancun",
+        "to": "Cancun (Mexico)",
         "price": 2290,
         "currency": "R$",
         "class": "Econômica",
@@ -93,7 +93,7 @@
     {
         "id": "br_sao_paulo-milan-13_sep_2025",
         "from": "Sao Paulo",
-        "to": "Milan",
+        "to": "Milan (Italy)",
         "price": 3180,
         "currency": "R$",
         "class": "Econômica",
@@ -106,7 +106,7 @@
     {
         "id": "br_sao_paulo-madrid-13_sep_2025",
         "from": "Sao Paulo",
-        "to": "Madrid",
+        "to": "Madrid (Spain)",
         "price": 2690,
         "currency": "R$",
         "class": "Econômica",
@@ -119,7 +119,7 @@
     {
         "id": "br_sao_paulo-porto-13_sep_2025",
         "from": "Sao Paulo",
-        "to": "Porto",
+        "to": "Porto (Portugal)",
         "price": 3040,
         "currency": "R$",
         "class": "Econômica",
@@ -132,7 +132,7 @@
     {
         "id": "br_recife-lisbon-11_sep_2025",
         "from": "Recife",
-        "to": "Lisbon",
+        "to": "Lisbon (Portugal)",
         "price": 3390,
         "currency": "R$",
         "class": "Econômica",
@@ -145,7 +145,7 @@
     {
         "id": "br_recife-porto-11_sep_2025",
         "from": "Recife",
-        "to": "Porto",
+        "to": "Porto (Portugal)",
         "price": 3340,
         "currency": "R$",
         "class": "Econômica",
@@ -158,7 +158,7 @@
     {
         "id": "br_vitoria-madrid-11_sep_2025",
         "from": "Vitoria",
-        "to": "Madrid",
+        "to": "Madrid (Spain)",
         "price": 3750,
         "currency": "R$",
         "class": "Econômica",
@@ -171,7 +171,7 @@
     {
         "id": "br_brasilia-zurich-11_sep_2025",
         "from": "Brasilia",
-        "to": "Zurich",
+        "to": "Zurich (Switzerland)",
         "price": 3883,
         "currency": "R$",
         "class": "Econômica",
@@ -184,7 +184,7 @@
     {
         "id": "br_recife-porto-11_sep_2025",
         "from": "Recife",
-        "to": "Porto",
+        "to": "Porto (Portugal)",
         "price": 3420,
         "currency": "R$",
         "class": "Econômica",
@@ -197,7 +197,7 @@
     {
         "id": "br_recife-lisbon-11_sep_2025",
         "from": "Recife",
-        "to": "Lisbon",
+        "to": "Lisbon (Portugal)",
         "price": 3540,
         "currency": "R$",
         "class": "Econômica",
@@ -210,7 +210,7 @@
     {
         "id": "br_rio_de_janeiro-montevideo-10_sep_2025",
         "from": "Rio de Janeiro",
-        "to": "Montevideo",
+        "to": "Montevideo (Uruguay)",
         "price": 1020,
         "currency": "R$",
         "class": "Econômica",
@@ -223,7 +223,7 @@
     {
         "id": "br_sao_paulo-santiago-10_sep_2025",
         "from": "Sao Paulo",
-        "to": "Santiago",
+        "to": "Santiago (Chile)",
         "price": 1080,
         "currency": "R$",
         "class": "Econômica",
@@ -236,7 +236,7 @@
     {
         "id": "br_sao_paulo-taipei-10_sep_2025",
         "from": "Sao Paulo",
-        "to": "Taipei",
+        "to": "Taipei (Taiwan)",
         "price": 4500,
         "currency": "R$",
         "class": "Econômica",
@@ -249,7 +249,7 @@
     {
         "id": "br_rio_de_janeiro-hong_kong-10_sep_2025",
         "from": "Rio de Janeiro",
-        "to": "Hong Kong",
+        "to": "Hong Kong (Hong Kong)",
         "price": 4650,
         "currency": "R$",
         "class": "Econômica",
@@ -262,7 +262,7 @@
     {
         "id": "br_sao_paulo-hong_kong-10_sep_2025",
         "from": "Sao Paulo",
-        "to": "Hong Kong",
+        "to": "Hong Kong (Hong Kong)",
         "price": 4650,
         "currency": "R$",
         "class": "Econômica",
@@ -275,7 +275,7 @@
     {
         "id": "br_sao_paulo-santiago-09_sep_2025",
         "from": "Sao Paulo",
-        "to": "Santiago",
+        "to": "Santiago (Chile)",
         "price": 793,
         "currency": "R$",
         "class": "Econômica",
@@ -288,7 +288,7 @@
     {
         "id": "br_sao_paulo-punta_cana-09_sep_2025",
         "from": "Sao Paulo",
-        "to": "Punta Cana",
+        "to": "Punta Cana (Dominican Republic)",
         "price": 1440,
         "currency": "R$",
         "class": "Econômica",
@@ -301,7 +301,7 @@
     {
         "id": "br_belo_horizonte-lima-09_sep_2025",
         "from": "Belo Horizonte",
-        "to": "Lima",
+        "to": "Lima (Peru)",
         "price": 2220,
         "currency": "R$",
         "class": "Econômica",
@@ -314,7 +314,7 @@
     {
         "id": "br_sao_paulo-cancun-09_sep_2025",
         "from": "Sao Paulo",
-        "to": "Cancun",
+        "to": "Cancun (Mexico)",
         "price": 2320,
         "currency": "R$",
         "class": "Econômica",
@@ -327,7 +327,7 @@
     {
         "id": "br_sao_paulo-san_jose-09_sep_2025",
         "from": "Sao Paulo",
-        "to": "San Jose",
+        "to": "San Jose (Costa Rica)",
         "price": 1830,
         "currency": "R$",
         "class": "Econômica",
@@ -340,7 +340,7 @@
     {
         "id": "br_sao_paulo-lima-09_sep_2025",
         "from": "Sao Paulo",
-        "to": "Lima",
+        "to": "Lima (Peru)",
         "price": 1940,
         "currency": "R$",
         "class": "Econômica",
@@ -353,7 +353,7 @@
     {
         "id": "br_sao_paulo-san_juan-09_sep_2025",
         "from": "Sao Paulo",
-        "to": "San Juan",
+        "to": "San Juan (Puerto Rico)",
         "price": 2110,
         "currency": "R$",
         "class": "Econômica",
@@ -366,7 +366,7 @@
     {
         "id": "br_sao_paulo-oranjestad-09_sep_2025",
         "from": "Sao Paulo",
-        "to": "Oranjestad",
+        "to": "Oranjestad (Aruba)",
         "price": 1910,
         "currency": "R$",
         "class": "Econômica",
@@ -379,7 +379,7 @@
     {
         "id": "br_sao_paulo-madrid-09_sep_2025",
         "from": "Sao Paulo",
-        "to": "Madrid",
+        "to": "Madrid (Spain)",
         "price": 2720,
         "currency": "R$",
         "class": "Econômica",
@@ -392,7 +392,7 @@
     {
         "id": "br_rio_de_janeiro-madrid-09_sep_2025",
         "from": "Rio de Janeiro",
-        "to": "Madrid",
+        "to": "Madrid (Spain)",
         "price": 3200,
         "currency": "R$",
         "class": "Econômica",
@@ -405,7 +405,7 @@
     {
         "id": "br_belo_horizonte-madrid-09_sep_2025",
         "from": "Belo Horizonte",
-        "to": "Madrid",
+        "to": "Madrid (Spain)",
         "price": 3490,
         "currency": "R$",
         "class": "Econômica",
@@ -418,7 +418,7 @@
     {
         "id": "br_sao_paulo-rome-09_sep_2025",
         "from": "Sao Paulo",
-        "to": "Rome",
+        "to": "Rome (Italy)",
         "price": 3570,
         "currency": "R$",
         "class": "Econômica",
@@ -431,7 +431,7 @@
     {
         "id": "br_sao_paulo-lisbon-09_sep_2025",
         "from": "Sao Paulo",
-        "to": "Lisbon",
+        "to": "Lisbon (Portugal)",
         "price": 3250,
         "currency": "R$",
         "class": "Econômica",
@@ -444,7 +444,7 @@
     {
         "id": "br_sao_paulo-barcelona-09_sep_2025",
         "from": "Sao Paulo",
-        "to": "Barcelona",
+        "to": "Barcelona (Spain)",
         "price": 3310,
         "currency": "R$",
         "class": "Econômica",
@@ -457,7 +457,7 @@
     {
         "id": "br_sao_paulo-porto-09_sep_2025",
         "from": "Sao Paulo",
-        "to": "Porto",
+        "to": "Porto (Portugal)",
         "price": 3070,
         "currency": "R$",
         "class": "Econômica",
@@ -470,7 +470,7 @@
     {
         "id": "br_sao_paulo-geneva-09_sep_2025",
         "from": "Sao Paulo",
-        "to": "Geneva",
+        "to": "Geneva (Switzerland)",
         "price": 3130,
         "currency": "R$",
         "class": "Econômica",
@@ -483,7 +483,7 @@
     {
         "id": "br_sao_paulo-zurich-09_sep_2025",
         "from": "Sao Paulo",
-        "to": "Zurich",
+        "to": "Zurich (Switzerland)",
         "price": 3130,
         "currency": "R$",
         "class": "Econômica",
@@ -496,7 +496,7 @@
     {
         "id": "br_belo_horizonte-bogota-08_sep_2025",
         "from": "Belo Horizonte",
-        "to": "Bogota",
+        "to": "Bogota (Colombia)",
         "price": 1700,
         "currency": "R$",
         "class": "Econômica",
@@ -509,7 +509,7 @@
     {
         "id": "br_sao_paulo-madrid-07_sep_2025",
         "from": "Sao Paulo",
-        "to": "Madrid",
+        "to": "Madrid (Spain)",
         "price": 2710,
         "currency": "R$",
         "class": "Econômica",
@@ -522,7 +522,7 @@
     {
         "id": "br_rio_de_janeiro-madrid-07_sep_2025",
         "from": "Rio de Janeiro",
-        "to": "Madrid",
+        "to": "Madrid (Spain)",
         "price": 3270,
         "currency": "R$",
         "class": "Econômica",
@@ -535,7 +535,7 @@
     {
         "id": "br_sao_paulo-porto-07_sep_2025",
         "from": "Sao Paulo",
-        "to": "Porto",
+        "to": "Porto (Portugal)",
         "price": 3060,
         "currency": "R$",
         "class": "Econômica",
@@ -548,7 +548,7 @@
     {
         "id": "br_sao_paulo-taipei-07_sep_2025",
         "from": "Sao Paulo",
-        "to": "Taipei",
+        "to": "Taipei (Taiwan)",
         "price": 4475,
         "currency": "R$",
         "class": "Econômica",
@@ -561,7 +561,7 @@
     {
         "id": "br_rio_de_janeiro-hong_kong-07_sep_2025",
         "from": "Rio de Janeiro",
-        "to": "Hong Kong",
+        "to": "Hong Kong (Hong Kong)",
         "price": 4628,
         "currency": "R$",
         "class": "Econômica",
@@ -574,7 +574,7 @@
     {
         "id": "br_belo_horizonte-seoul-07_sep_2025",
         "from": "Belo Horizonte",
-        "to": "Seoul",
+        "to": "Seoul (South Korea)",
         "price": 5626,
         "currency": "R$",
         "class": "Econômica",
@@ -587,7 +587,7 @@
     {
         "id": "br_sao_paulo-singapore-07_sep_2025",
         "from": "Sao Paulo",
-        "to": "Singapore",
+        "to": "Singapore (Singapore)",
         "price": 5741,
         "currency": "R$",
         "class": "Econômica",
@@ -600,7 +600,7 @@
     {
         "id": "br_sao_paulo-seoul-07_sep_2025",
         "from": "Sao Paulo",
-        "to": "Seoul",
+        "to": "Seoul (South Korea)",
         "price": 5560,
         "currency": "R$",
         "class": "Econômica",
@@ -613,7 +613,7 @@
     {
         "id": "br_sao_paulo-hong_kong-07_sep_2025",
         "from": "Sao Paulo",
-        "to": "Hong Kong",
+        "to": "Hong Kong (Hong Kong)",
         "price": 4630,
         "currency": "R$",
         "class": "Econômica",
@@ -626,7 +626,7 @@
     {
         "id": "br_sao_paulo-ho_chi_minh_city-07_sep_2025",
         "from": "Sao Paulo",
-        "to": "Ho Chi Minh City",
+        "to": "Ho Chi Minh City (Vietnam)",
         "price": 5780,
         "currency": "R$",
         "class": "Econômica",
@@ -639,7 +639,7 @@
     {
         "id": "br_sao_paulo-manila-07_sep_2025",
         "from": "Sao Paulo",
-        "to": "Manila",
+        "to": "Manila (Philippines)",
         "price": 5480,
         "currency": "R$",
         "class": "Econômica",
@@ -652,7 +652,7 @@
     {
         "id": "br_rio_de_janeiro-delhi-07_sep_2025",
         "from": "Rio de Janeiro",
-        "to": "Delhi",
+        "to": "Delhi (India)",
         "price": 5967,
         "currency": "R$",
         "class": "Econômica",
@@ -665,7 +665,7 @@
     {
         "id": "br_sao_paulo-punta_cana-06_sep_2025",
         "from": "Sao Paulo",
-        "to": "Punta Cana",
+        "to": "Punta Cana (Dominican Republic)",
         "price": 1450,
         "currency": "R$",
         "class": "Econômica",
@@ -678,7 +678,7 @@
     {
         "id": "br_rio_de_janeiro-lima-06_sep_2025",
         "from": "Rio de Janeiro",
-        "to": "Lima",
+        "to": "Lima (Peru)",
         "price": 2170,
         "currency": "R$",
         "class": "Econômica",
@@ -691,7 +691,7 @@
     {
         "id": "br_belo_horizonte-lima-06_sep_2025",
         "from": "Belo Horizonte",
-        "to": "Lima",
+        "to": "Lima (Peru)",
         "price": 2210,
         "currency": "R$",
         "class": "Econômica",
@@ -704,7 +704,7 @@
     {
         "id": "br_sao_paulo-san_jose-06_sep_2025",
         "from": "Sao Paulo",
-        "to": "San Jose",
+        "to": "San Jose (Costa Rica)",
         "price": 1860,
         "currency": "R$",
         "class": "Econômica",
@@ -717,7 +717,7 @@
     {
         "id": "br_sao_paulo-lima-06_sep_2025",
         "from": "Sao Paulo",
-        "to": "Lima",
+        "to": "Lima (Peru)",
         "price": 1930,
         "currency": "R$",
         "class": "Econômica",
@@ -730,7 +730,7 @@
     {
         "id": "br_rio_de_janeiro-cusco-06_sep_2025",
         "from": "Rio de Janeiro",
-        "to": "Cusco",
+        "to": "Cusco (Peru)",
         "price": 2570,
         "currency": "R$",
         "class": "Econômica",
@@ -743,7 +743,7 @@
     {
         "id": "br_sao_paulo-panama_city-06_sep_2025",
         "from": "Sao Paulo",
-        "to": "Panama City",
+        "to": "Panama City (Panama)",
         "price": 2290,
         "currency": "R$",
         "class": "Econômica",
@@ -756,7 +756,7 @@
     {
         "id": "br_sao_paulo-istanbul-06_sep_2025",
         "from": "Sao Paulo",
-        "to": "Istanbul",
+        "to": "Istanbul (Turkiye)",
         "price": 4550,
         "currency": "R$",
         "class": "Econômica",
@@ -769,7 +769,7 @@
     {
         "id": "br_sao_paulo-doha-06_sep_2025",
         "from": "Sao Paulo",
-        "to": "Doha",
+        "to": "Doha (Qatar)",
         "price": 5080,
         "currency": "R$",
         "class": "Econômica",
@@ -782,7 +782,7 @@
     {
         "id": "br_rio_de_janeiro-bangkok-06_sep_2025",
         "from": "Rio de Janeiro",
-        "to": "Bangkok",
+        "to": "Bangkok (Thailand)",
         "price": 6450,
         "currency": "R$",
         "class": "Econômica",
@@ -795,7 +795,7 @@
     {
         "id": "br_rio_de_janeiro-bali-06_sep_2025",
         "from": "Rio de Janeiro",
-        "to": "Bali",
+        "to": "Bali (Indonesia)",
         "price": 7280,
         "currency": "R$",
         "class": "Econômica",
@@ -808,7 +808,7 @@
     {
         "id": "br_sao_paulo-san_juan-06_sep_2025",
         "from": "Sao Paulo",
-        "to": "San Juan",
+        "to": "San Juan (Puerto Rico)",
         "price": 2320,
         "currency": "R$",
         "class": "Econômica",
@@ -821,7 +821,7 @@
     {
         "id": "br_sao_paulo-santo_domingo-06_sep_2025",
         "from": "Sao Paulo",
-        "to": "Santo Domingo",
+        "to": "Santo Domingo (Dominican Republic)",
         "price": 2660,
         "currency": "R$",
         "class": "Econômica",
@@ -834,7 +834,7 @@
     {
         "id": "br_sao_paulo-casablanca-06_sep_2025",
         "from": "Sao Paulo",
-        "to": "Casablanca",
+        "to": "Casablanca (Morocco)",
         "price": 3900,
         "currency": "R$",
         "class": "Econômica",
@@ -847,7 +847,7 @@
     {
         "id": "br_rio_de_janeiro-cairo-06_sep_2025",
         "from": "Rio de Janeiro",
-        "to": "Cairo",
+        "to": "Cairo (Egypt)",
         "price": 4870,
         "currency": "R$",
         "class": "Econômica",
@@ -860,7 +860,7 @@
     {
         "id": "br_sao_paulo-willemstad-06_sep_2025",
         "from": "Sao Paulo",
-        "to": "Willemstad",
+        "to": "Willemstad (Curaçao)",
         "price": 2800,
         "currency": "R$",
         "class": "Econômica",
@@ -873,7 +873,7 @@
     {
         "id": "br_belo_horizonte-saint_johns-06_sep_2025",
         "from": "Belo Horizonte",
-        "to": "Saint Johns",
+        "to": "Saint Johns (Antigua)",
         "price": 6080,
         "currency": "R$",
         "class": "Econômica",
@@ -886,7 +886,7 @@
     {
         "id": "br_sao_paulo-oranjestad-06_sep_2025",
         "from": "Sao Paulo",
-        "to": "Oranjestad",
+        "to": "Oranjestad (Aruba)",
         "price": 1900,
         "currency": "R$",
         "class": "Econômica",
@@ -899,7 +899,7 @@
     {
         "id": "br_belo_horizonte-bridgetown-06_sep_2025",
         "from": "Belo Horizonte",
-        "to": "Bridgetown",
+        "to": "Bridgetown (Barbados)",
         "price": 3520,
         "currency": "R$",
         "class": "Econômica",
@@ -912,7 +912,7 @@
     {
         "id": "br_belo_horizonte-nassau-06_sep_2025",
         "from": "Belo Horizonte",
-        "to": "Nassau",
+        "to": "Nassau (Bahamas)",
         "price": 3770,
         "currency": "R$",
         "class": "Econômica",
