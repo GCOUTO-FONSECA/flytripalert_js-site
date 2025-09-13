@@ -7,10 +7,10 @@ import Footer from "@/components/Footer";
 export default async function Home({
   searchParams,
   }: {
-    searchParams: Promise<Record<string, string | string[] | undefined>>;
+    searchParams: { [key: string]: string | string[] | undefined };
   }) {
   // Obtém os parâmetros de busca da URL (por exemplo, ?page=2)
-  const sp = await searchParams;
+  const sp = searchParams;
   // Tenta pegar o número da página, se não existir usa 1
   const raw = Number(sp?.page ?? 1);
   // Garante que o número da página seja válido (maior que zero)

@@ -1,0 +1,67 @@
+[
+    {
+        "id": "br_sao_paulo-punta_del_este-06_sep_2025",
+        "from": "Sao Paulo",
+        "to": "Punta del Este",
+        "price": 1850,
+        "currency": "R$",
+        "class": "Econômica",
+        "depart": "06/01/2026",
+        "return": "16/01/2026",
+        "days": 10,
+        "found_at": "06/09/2025 15:56",
+        "link": "https://www.google.com/travel/flights?q=flights+from+Sao Paulo+to+Punta del Este+on+06 Jan 2026+return+on+16 Jan 2026&curr=BRL"
+    },
+    {
+        "id": "br_rio_de_janeiro-punta_del_este-06_sep_2025",
+        "from": "Rio de Janeiro",
+        "to": "Punta del Este",
+        "price": 1220,
+        "currency": "R$",
+        "class": "Econômica",
+        "depart": "24/02/2026",
+        "return": "06/03/2026",
+        "days": 10,
+        "found_at": "06/09/2025 15:56",
+        "link": "https://www.google.com/travel/flights?q=flights+from+Rio de Janeiro+to+Punta del Este+on+24 Feb 2026+return+on+06 Mar 2026&curr=BRL"
+    },
+    {
+        "id": "br_rio_de_janeiro-montevideo-06_sep_2025",
+        "from": "Rio de Janeiro",
+        "to": "Montevideo",
+        "price": 1220,
+        "currency": "R$",
+        "class": "Econômica",
+        "depart": "24/02/2026",
+        "return": "06/03/2026",
+        "days": 10,
+        "found_at": "06/09/2025 15:56",
+        "link": "https://www.google.com/travel/flights?q=flights+from+Rio de Janeiro+to+Montevideo+on+24 Feb 2026+return+on+06 Mar 2026&curr=BRL"
+    },
+    {
+        "id": "br_rio_de_janeiro-montevideo-06_sep_2025",
+        "from": "Rio de Janeiro",
+        "to": "Montevideo",
+        "price": 1420,
+        "currency": "R$",
+        "class": "Econômica",
+        "depart": "25/01/2026",
+        "return": "04/02/2026",
+        "days": 10,
+        "found_at": "06/09/2025 15:56",
+        "link": "https://www.google.com/travel/flights?q=flights+from+Rio de Janeiro+to+Montevideo+on+25 Jan 2026+return+on+04 Feb 2026&curr=BRL"
+    },
+    {
+        "id": "br_rio_de_janeiro-montevideo-06_sep_2025",
+        "from": "Rio de Janeiro",
+        "to": "Montevideo",
+        "price": 1220,
+        "currency": "R$",
+        "class": "Econômica",
+        "depart": "25/02/2026",
+        "return": "07/03/2026",
+        "days": 10,
+        "found_at": "06/09/2025 15:56",
+        "link": "https://www.google.com/travel/flights?q=flights+from+Rio de Janeiro+to+Montevideo+on+25 Feb 2026+return+on+07 Mar 2026&curr=BRL"
+    }
+]
