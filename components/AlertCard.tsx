@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 
 type Props = {
@@ -42,9 +43,12 @@ const gradientByColor: Record<string, string> = {
   gray: "bg-gradient-to-r from-gray-400 to-gray-400 hover:from-gray-500 hover:to-gray-300",
 };
 
-function translateDate(dateStr: string): string {
+function translateDate(dateStr: string, translateTo: string): string {
   const date = new Date(dateStr);
-  return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+  let newDate = date.toLocaleDateString(translateTo, { day: '2-digit', month: 'short', year: 'numeric' }).replace(".", "").replace(" de ", " ");
+  // Capitalize first letter of month
+  newDate = newDate.replace(/(\d{2}) (\w)(\w+)/, (match, d, m1, mRest) => `${d} ${m1.toUpperCase()}${mRest}`);
+  return newDate;
 }
 
 export default function AlertCard(p: Props) {
@@ -91,8 +95,8 @@ export default function AlertCard(p: Props) {
                     [&>span]:inline sm:[&>span]:whitespace-nowrap
                       sm:[&>span:not(:last-child)]:after:content-['•']
                       sm:[&>span:not(:last-child)]:after:mx-1">
-          <span>Ida: {p.depart}</span>
-          <span>Volta: {p.return}</span>
+          <span>Ida: {translateDate(p.depart, 'pt-BR')}</span>
+          <span>Volta: {translateDate(p.return, 'pt-BR')}</span>
           <span className={`px-2 py-0.5 rounded-full text-white font-medium ${color} inline-flex w-fit`}>
             {elapsedTime >= 1 ? elapsedTime === 1 ? "Há 1 dia" : "Há " + elapsedTime.toString() + " dias" : "Hoje"}
           </span>
@@ -101,11 +105,11 @@ export default function AlertCard(p: Props) {
     <div className="self-center flex flex-col items-center justify-center text-center">
     <div className="text-xl sm:text-2xl font-bold leading-tight">
         {p.currency} {p.price}
-        <p className="text-slate-600 font-light text-[0.5rem] sm:text-xs md:text-sm lg:text-[0.7rem]">Preço em {translateDate(p.found_at)}</p>
+        <p className="text-slate-600 font-light text-[0.5rem] sm:text-xs md:text-sm lg:text-[0.7rem]">Preço em {translateDate(p.found_at, 'pt-BR')}</p>
     </div>
 
     <Link
-      href={`${p.link}`}
+      href={p.link}
       target="_blank"
       rel="noopener noreferrer"
       className={`mt-2 inline-flex items-center justify-center gap-1
@@ -115,8 +119,14 @@ export default function AlertCard(p: Props) {
       focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600
       active:translate-y-px`}
       aria-label="Abrir este achado"
+      onClick={e => {
+      if (new Date(p.depart) < new Date()) {
+        e.preventDefault();
+        alert("Este alerta possui data de ida no passado");
+      }
+      }}
     >
-      Google Flights
+      Abrir achado
       <span aria-hidden="true">→</span>
     </Link>
     </div>
