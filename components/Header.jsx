@@ -6,6 +6,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { SiInstagram } from "react-icons/si";
 
+const NAV = [
+  { id: 1, href: "/", label: "Home" },
+  { id: 2, href: "/?page=1&periodo=24h", label: "Alertas de hoje" },
+];
+
 export default function Header() {
   const [open, setOpen] = useState(false);
 
@@ -27,6 +32,15 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6">
+          {NAV.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-sm hover:opacity-80"
+            >
+              {item.label}
+            </Link>
+          ))}
           <Link
             href="https://www.instagram.com/flytripalert/"
             target="_blank"

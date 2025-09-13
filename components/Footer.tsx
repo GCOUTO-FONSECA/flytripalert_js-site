@@ -46,7 +46,7 @@ export default function Footer() {
             <h4 className="mb-3 font-semibold text-slate-900">Explorar</h4>
             <ul className="space-y-2">
               <li><Link href="/#alerts" className="hover:text-blue-600">Todos os alertas</Link></li>
-              <li><Link href="/top" className="hover:text-blue-600">Achado do dia</Link></li>
+              <li><Link href="/?page=1&periodo=24h" className="hover:text-blue-600">Achado do dia</Link></li>
             </ul>
           </nav>
 

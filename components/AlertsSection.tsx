@@ -27,7 +27,7 @@ export default function AlertsSection({
     searchParams,
     }: {
     page: number;
-    searchParams?: { [key: string]: string | string[] |undefined };
+    searchParams?: { [key: string]: string | string[] | undefined };
     }) {
     // ler filtros do URL
     const origemRaw = searchParams?.origem;

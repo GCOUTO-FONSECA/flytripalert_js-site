@@ -119,7 +119,7 @@ export default function Hero() {
                 hover:from-blue-600 hover:via-blue-600 hover:to-blue-600
                 transition-all duration-300"
             >
-              {showFilters ? "Fechar filtros" : "Selecionar filtros"}
+              {showFilters ? "Fechar filtros" : "Filtrar alertas"}
             </button>
 
             {/* Painel de filtros (formulário) */}
