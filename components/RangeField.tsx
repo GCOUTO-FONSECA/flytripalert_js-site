@@ -7,10 +7,9 @@ type Props = {
   min?: number;
   max?: number;
   step?: number;
-  value?: number;
-  defaultValue?: number;
-  onChange?: (val: number) => void;
-  prefix?: string; // ex.: "R$ " ou "€ "
+  value: number; // always controlled
+  onChange: (val: number) => void;
+  prefix?: string;
 };
 
 export default function RangeField({
@@ -20,26 +19,21 @@ export default function RangeField({
   max = 5000,
   step = 10,
   value,
-  defaultValue = min,
   onChange,
   prefix = "",
 }: Props) {
-  const isControlled = value !== undefined;
-  const [inner, setInner] = useState<number>(isControlled ? value! : defaultValue);
-  const [inputValue, setInputValue] = useState<string>(String(inner));
+  // State for the number input field (as string for easier editing)
+  const [inputValue, setInputValue] = useState<string>(String(value));
 
+  // Sync inputValue with value prop
   useEffect(() => {
-    if (isControlled) setInner(value!);
-  }, [isControlled, value]);
+    setInputValue(String(value));
+  }, [value]);
 
-  useEffect(() => {
-    setInputValue(String(inner));
-  }, [inner]);
-
+  // Helper to clamp and update
   function setBoth(v: number) {
     const clamped = Math.max(min, Math.min(max, v));
-    if (!isControlled) setInner(clamped);
-    onChange?.(clamped);
+    onChange(clamped);
   }
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -51,27 +45,23 @@ export default function RangeField({
     if (!isNaN(num)) {
       setBoth(num);
     } else {
-      setInputValue(String(inner)); // reset to last valid value
+      setInputValue(String(value)); // reset to last valid value
     }
   }
 
   return (
     <div className="flex flex-col items-center">
       <label htmlFor={id} className="text-sm font-medium">{label}</label>
-
-      {/* Slider */}
       <input
         id={id}
         type="range"
         min={min}
         max={max}
         step={step}
-        value={inner}
+        value={value}
         onChange={(e) => setBoth(Number(e.target.value))}
         className="mt-2 max-w-xl accent-blue-500"
       />
-
-      {/* Number input + hint */}
       <div className="mt-2 flex items-center gap-2">
         <div className="relative">
           <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
