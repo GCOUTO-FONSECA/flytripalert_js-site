@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import AlertsSection from "@/components/AlertsSection";
 import Footer from "@/components/Footer";
 
-export default async function Home({
+export default function Home({
   searchParams,
   }: {
     searchParams: { [key: string]: string | string[] | undefined };
