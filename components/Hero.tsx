@@ -163,18 +163,18 @@ export default function Hero() {
                 {/* Botões de aplicar e limpar filtros */}
                 <div className="mt-6 flex justify-center gap-3">
                   <button
-                    type="button" // Evita submit implícito
-                    onClick={applyFilters}
-                    className="rounded-2xl px-5 py-2 font-medium bg-blue-500 text-white hover:bg-blue-600 transition"
-                  >
-                    Aplicar filtros
-                  </button>
-                  <button
                     type="button" // Reseta manualmente
                     onClick={resetFilters}
                     className="rounded-2xl px-5 py-2 font-medium border hover:bg-gray-100 transition"
                   >
                     Limpar
+                  </button>
+                  <button
+                    type="button" // Evita submit implícito
+                    onClick={applyFilters}
+                    className="rounded-2xl px-5 py-2 font-medium bg-blue-500 text-white hover:bg-blue-600 transition"
+                  >
+                    Aplicar filtros
                   </button>
                 </div>
               </form>
