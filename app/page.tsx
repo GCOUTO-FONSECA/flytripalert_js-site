@@ -4,13 +4,13 @@ import Hero from "@/components/Hero";
 import AlertsSection from "@/components/AlertsSection";
 import Footer from "@/components/Footer";
 
-export default function Home({
+export default async function Home({
   searchParams,
   }: {
-    searchParams: { [key: string]: string | string[] | undefined };
+    searchParams: Promise<Record<string, string | string[] | undefined>>;
   }) {
   // Obtém os parâmetros de busca da URL (por exemplo, ?page=2)
-  const sp = searchParams;
+  const sp = await searchParams;
   // Tenta pegar o número da página, se não existir usa 1
   const raw = Number(sp?.page ?? 1);
   // Garante que o número da página seja válido (maior que zero)

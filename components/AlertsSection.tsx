@@ -95,7 +95,7 @@ export default function AlertsSection({
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:gap-6">
           {alertsVisible.map((a, i) => (
-            <AlertCard key={start + i} {...a} />
+            <AlertCard key={a.id + i} {...a} />
           ))}
         </div>
       )}
