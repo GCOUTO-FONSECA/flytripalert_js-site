@@ -96,7 +96,7 @@ export default function Hero() {
 
   // Renderização do componente
   return (
-    <section className="relative w-full bg-[linear-gradient(to_bottom,_theme(colors.blue.500)_0%,_theme(colors.blue.500)_70%,_theme(colors.gray.100)_100%)] text-white">
+    <section className="relative isolate w-full text-white">
       <div className="mx-auto max-w-7xl pt-12 pb-0 sm:pt-16 sm:pb-0 text-center">
         {/* Headline principal */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
@@ -106,6 +106,12 @@ export default function Hero() {
         {/* Subheadline explicativa */}
         <p className="mt-4 text-base sm:text-lg opacity-90 font-bold">
           A Fly rastreia milhares de voos diariamente enquanto você descansa
+        </p>
+        <p style={{ backgroundColor: 'rgb(96, 165, 250)' }} className="relative z-10 mt-4 text-base sm:text-lg font-bold
+        border border-slate-200 p-4 max-w-2xl text-center mx-auto rounded-2xl
+        text-white shadow-md">
+          ATENÇÃO! <br />
+          Preços válidos no momento da criação do alerta<br />
         </p>
 
         <section id="form" className="relative w-full text-white">

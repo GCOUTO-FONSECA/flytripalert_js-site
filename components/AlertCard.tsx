@@ -51,6 +51,9 @@ function translateDate(dateStr: string, translateTo: string): string {
   return newDate;
 }
 
+
+
+
 export default function AlertCard(p: Props) {
   const elapsedTime = elapsedDays(p.found_at);
   const color = ratingColor(p.found_at);
@@ -65,7 +68,7 @@ export default function AlertCard(p: Props) {
           <span className="hidden sm:inline">
             <span>{p.from}</span>
             <span className="mx-1" aria-hidden>→</span>
-            <span>{p.to}</span>
+            <span>{p.to.split("(")[0]}</span><span className="text-sm text-slate-700 font-normal"> ({p.to.split("(")[1].replace(")", "") ?? ""})</span>
           </span>
         </h3>
 
@@ -76,7 +79,12 @@ export default function AlertCard(p: Props) {
 
         {/* para: (same line, grey, lower)) */}
         <span className="text-xs text-slate-500 font-normal">para:</span>
-        <h3 className="text-base font-semibold leading-tight">{p.to}</h3>
+        <div className="flex flex-col col-start-2">
+          <h3 className="text-base font-semibold leading-tight">{p.to.split("(")[0]}</h3>
+          <span className="text-sm text-slate-700 font-normal">
+            ({p.to.split("(")[1]?.replace(")", "") ?? ""})
+          </span>
+        </div>
 
         {/* Ida / Volta in the same grid*/}
         <span className="text-xs text-slate-500 font-normal">Ida:</span>
