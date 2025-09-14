@@ -1,5 +1,18 @@
 [
   {
+    "id": "br_belo_horizonte-oranjestad-14_sep_2025",
+    "from": "Belo Horizonte",
+    "to": "Oranjestad (Aruba)",
+    "price": 2060,
+    "currency": "R$",
+    "class": "Econômica",
+    "depart": "29 Oct 2025",
+    "return": "08 Nov 2025",
+    "days": 10,
+    "found_at": "13 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/XpRBL6ktkLiRnFSv5"
+  },
+  {
     "id": "br_belo_horizonte-oranjestad-13_sep_2025",
     "from": "Belo Horizonte",
     "to": "Oranjestad (Aruba)",
