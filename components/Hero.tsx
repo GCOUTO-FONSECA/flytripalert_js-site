@@ -107,7 +107,7 @@ export default function Hero() {
         <p className="mt-4 text-base sm:text-lg opacity-90 font-bold">
           A Fly rastreia milhares de voos diariamente enquanto você descansa
         </p>
-        <p style={{ backgroundColor: 'rgb(96, 165, 250)' }} className="relative z-10 mt-4 text-base sm:text-lg font-bold
+        <p style={{ backgroundColor: 'rgb(59, 130, 246)' }} className="relative z-10 mt-4 text-base sm:text-lg font-bold
         border border-slate-200 p-4 max-w-2xl text-center mx-auto rounded-2xl
         text-white shadow-md">
           ATENÇÃO! <br />
