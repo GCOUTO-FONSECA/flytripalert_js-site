@@ -111,7 +111,7 @@ export default function Hero() {
         border border-slate-200 p-4 max-w-2xl text-center mx-auto rounded-2xl
         text-white shadow-md">
           ATENÇÃO! <br />
-          Preços válidos no momento da criação do alerta<br />
+          Os preços mostrados podem mudar rapidamente<br />
         </p>
 
         <section id="form" className="relative w-full text-white">
