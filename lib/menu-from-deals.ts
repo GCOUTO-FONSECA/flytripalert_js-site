@@ -52,6 +52,7 @@ export function buildMenusFromDeals(deals: Deal[]): Menu[] {
   const origins      = uniqSorted(deals.map((d) => d.from));
   const maxPrice     = Math.max(0, ...deals.map((d) => d.price ?? 0));
   const minPrice     = 0;
+  const seatClass    = uniqSorted(deals.map((d) => d.class));
 
   const menus: Menu[] = [
     {
@@ -74,13 +75,7 @@ export function buildMenusFromDeals(deals: Deal[]): Menu[] {
     {
       id: 'classe',
       label: 'Classe',
-      options: [
-        { value: 'all', label: 'Todas' },
-        { value: 'economica', label: 'Econômica' },
-        { value: 'executiva', label: 'Executiva' },
-        { value: 'primeira',  label: 'Primeira Classe' },
-
-      ],
+      options: toOptions(seatClass),
       defaultValue: 'all',
     },
     {
