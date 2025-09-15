@@ -1,5 +1,44 @@
 [
   {
+    "id": "br_brasilia-bogota-15_sep_2025",
+    "from": "Brasilia",
+    "to": "Bogota (Colombia)",
+    "price": 1640,
+    "currency": "R$",
+    "class": "Econômica",
+    "depart": "26 Jun 2026",
+    "return": "06 Jul 2026",
+    "days": 10,
+    "found_at": "15 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/fgWxB9C1ecZn9nrKA"
+  },
+  {
+    "id": "br_brasilia-santiago-15_sep_2025",
+    "from": "Brasilia",
+    "to": "Santiago (Chile)",
+    "price": 1488,
+    "currency": "R$",
+    "class": "Econômica",
+    "depart": "01 Jun 2026",
+    "return": "11 Jun 2026",
+    "days": 10,
+    "found_at": "15 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/PoRYD7D7m1EcozCc7"
+  },
+  {
+    "id": "br_sao_paulo-madrid-15_sep_2025",
+    "from": "Sao Paulo",
+    "to": "Madrid (Spain)",
+    "price": 2690,
+    "currency": "R$",
+    "class": "Econômica",
+    "depart": "28 Feb 2026",
+    "return": "10 Mar 2026",
+    "days": 10,
+    "found_at": "15 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/jjs5rbkU7ZtTwgY97"
+  },
+  {
     "id": "br_porto_alegre-san_jose-14_sep_2025",
     "from": "Porto Alegre",
     "to": "San Jose (Costa Rica)",
