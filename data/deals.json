@@ -1,5 +1,44 @@
 [
   {
+    "id": "br_sao_paulo-taipei-16_sep_2025",
+    "from": "Sao Paulo",
+    "to": "Taipei (Taiwan)",
+    "price": 4410,
+    "currency": "R$",
+    "class": "Econômica",
+    "depart": "09 Feb 2026",
+    "return": "19 Feb 2026",
+    "days": 10,
+    "found_at": "16 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/oD4NJA4uzaWszJxy6"
+  },
+  {
+    "id": "br_brasilia-bogota-16_sep_2025",
+    "from": "Brasilia",
+    "to": "Bogota (Colombia)",
+    "price": 1630,
+    "currency": "R$",
+    "class": "Econômica",
+    "depart": "26 Jun 2026",
+    "return": "06 Jul 2026",
+    "days": 10,
+    "found_at": "16 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/KWSxCfyfMugNumrb8"
+  },
+  {
+    "id": "br_brasilia-santiago-16_sep_2025",
+    "from": "Brasilia",
+    "to": "Santiago (Chile)",
+    "price": 1720,
+    "currency": "R$",
+    "class": "Econômica",
+    "depart": "01 Jun 2026",
+    "return": "11 Jun 2026",
+    "days": 10,
+    "found_at": "16 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/DxJwzBbFWXQ4PQJQA"
+  },
+  {
     "id": "br_brasilia-bogota-15_sep_2025",
     "from": "Brasilia",
     "to": "Bogota (Colombia)",
