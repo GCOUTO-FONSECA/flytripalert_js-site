@@ -42,7 +42,7 @@
     "id": "br_rio_de_janeiro-san_jose-17_sep_2025",
     "from": "Rio de Janeiro",
     "to": "San Jose (Costa Rica)",
-    "price": 2019,
+    "price": 2340,
     "currency": "R$",
     "class": "Econômica",
     "depart": "30 Oct 2025",
@@ -117,17 +117,30 @@
     "link": "https://www.google.com/travel/flights/s/5UWxDrFWyf7QzRYa7"
   },
   {
-    "id": "br_belo_horizonte-panama_city-17_sep_2025",
+    "id": "br_belo_horizonte-lima-17_sep_2025",
     "from": "Belo Horizonte",
-    "to": "Panama City (Panama)",
-    "price": 2120,
+    "to": "Lima (Peru)",
+    "price": 2180,
     "currency": "R$",
     "class": "Econômica",
-    "depart": "26 Oct 2025",
-    "return": "05 Nov 2025",
+    "depart": "05 Mar 2026",
+    "return": "15 Mar 2026",
     "days": 10,
     "found_at": "17 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/8WWx7ZZaJDSQKLJ36"
+    "link": "https://www.google.com/travel/flights/s/McjdbomdxNcos8T37"
+  },
+  {
+    "id": "br_belo_horizonte-san_jose-17_sep_2025",
+    "from": "Belo Horizonte",
+    "to": "San Jose (Costa Rica)",
+    "price": 2290,
+    "currency": "R$",
+    "class": "Econômica",
+    "depart": "30 Mar 2026",
+    "return": "09 Apr 2026",
+    "days": 10,
+    "found_at": "17 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/FpJNEzzbJx92MQaB6"
   },
   {
     "id": "br_sao_paulo-miami-16_sep_2025",
