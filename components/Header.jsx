@@ -9,6 +9,8 @@ import { SiInstagram } from "react-icons/si";
 const NAV = [
   { id: 1, href: "/#alerts", label: "Todos os Alertas" },
   { id: 2, href: "/?page=1&periodo=24h", label: "Alertas de hoje" },
+  { id: 3, href: "/eu", label: "EU" },
+  { id: 4, href: "/br", label: "BR" }
 ];
 
 export default function Header() {

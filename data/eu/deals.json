@@ -1,0 +1,28 @@
+[
+  {
+    "id": "br_sao_paulo-tokyo-20_sep_2025",
+    "from": "Sao Paulo",
+    "to": "Tokyo (Japan)",
+    "price": 6220,
+    "currency": "R$",
+    "class": "Econômica",
+    "depart": "22 Apr 2026",
+    "return": "06 May 2026",
+    "days": 14,
+    "found_at": "20 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/z9D6aJfkEW3izfwX6"
+  },
+  {
+    "id": "br_rio_de_janeiro-tokyo-20_sep_2025",
+    "from": "Rio de Janeiro",
+    "to": "Tokyo (Japan)",
+    "price": 6540,
+    "currency": "R$",
+    "class": "Econômica",
+    "depart": "27 May 2026",
+    "return": "10 Jun 2026",
+    "days": 14,
+    "found_at": "20 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/TPqReDLVsS7FNcQ76"
+  }
+]

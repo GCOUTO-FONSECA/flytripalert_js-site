@@ -1,6 +1,6 @@
 import AlertCard from "./AlertCard";
 import Pagination from "./Pagination";
-import deals from "@/data/deals.json";
+import { getDeals } from "@/lib/get-region-data";
 import toSlug from "@/lib/menu-from-deals";
 
 type Alert = {
@@ -17,18 +17,19 @@ type Alert = {
   class: string;
 };
 
-// definir tamanho das paginas
-const PAGE_SIZE = 10;
-// ler alertas em data/deals.json
-const alertList: Alert[] = deals as Alert[];
-
 export default function AlertsSection({
     page,
     searchParams,
+    region
     }: {
     page: number;
     searchParams?: { [key: string]: string | string[] | undefined };
+    region: "br" | "eu";
     }) {
+    // definir tamanho das paginas
+    const PAGE_SIZE = 10;
+    // ler alertas em data/deals.json
+    const alertList: Alert[] = getDeals(region) as Alert[];
     // ler filtros do URL
     const origemRaw = searchParams?.origem;
     const periodo = searchParams?.periodo;

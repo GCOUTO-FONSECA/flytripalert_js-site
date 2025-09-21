@@ -41,14 +41,45 @@ function uniqSorted(list: (string | undefined)[]) {
   return [...new Set(cleaned)].sort((a, b) => a.localeCompare(b, PT));
 }
 
-function toOptions(values: string[]) {
+function toOptions(values: string[], region: "br" | "eu" = "br"): Option[] {
   return [
-    { value: 'all', label: 'Todos' },
+    { value: 'all', label: region === "br" ? 'Todos' : 'All' },
     ...values.map((v) => ({ value: toSlug(v), label: v })),
   ];
 }
 
-export function buildMenusFromDeals(deals: Deal[]): Menu[] {
+export function buildMenusFromDeals(deals: Deal[], region: "br" | "eu"): Menu[] {
+  // Traduções de textos fixos
+  const dict = {
+    br: {
+      origin: "Origem",
+      destination: "Destino",
+      period: "Período",
+      periodOptions: [
+        { value: 'all', label: 'Todos' },
+        { value: '24h', label: 'Últimas 24h' },
+        { value: '3d',  label: 'Até 3 dias' },
+        { value: '7d',  label: 'Última semana' }
+      ],
+      class: "Classe",
+      priceRange: "Faixa de preço",
+    },
+    eu: {
+      origin: "Origin",
+      destination: "Destination",
+      period: "Period",
+      periodOptions: [
+        { value: 'all', label: 'All' },
+        { value: '24h', label: 'Last 24h' },
+        { value: '3d',  label: 'Up to 3 days' },
+        { value: '7d',  label: 'Last week' }
+      ],
+      class: "Class",
+      priceRange: "Price Range",
+    },
+  } as const;
+
+  const t = dict[region];
   const origins      = uniqSorted(deals.map((d) => d.from));
   const maxPrice     = Math.max(0, ...deals.map((d) => d.price ?? 0));
   const minPrice     = 0;
@@ -57,30 +88,25 @@ export function buildMenusFromDeals(deals: Deal[]): Menu[] {
   const menus: Menu[] = [
     {
       id: 'origem',
-      label: 'Origem',
-      options: toOptions(origins),
+      label: t.origin,
+      options: toOptions(origins, region),
       defaultValue: 'all',
     },
     {
       id: 'periodo',
-      label: 'Período',
-      options: [
-        { value: 'all', label: 'Todos' },
-        { value: '24h', label: 'Últimas 24h' },
-        { value: '3d',  label: 'Até 3 dias' },
-        { value: '7d',  label: 'Última semana' }
-      ],
+      label: t.period,
+      options: [...t.periodOptions],
       defaultValue: 'all',
     },
     {
       id: 'classe',
-      label: 'Classe',
-      options: toOptions(seatClass),
+      label: t.class,
+      options: toOptions(seatClass, region),
       defaultValue: 'all',
     },
     {
       id: "precoRange",
-      label: "Faixa de preço",
+      label: t.priceRange,
       options: [],
       defaultValue: [String(minPrice), String(maxPrice)]
     }

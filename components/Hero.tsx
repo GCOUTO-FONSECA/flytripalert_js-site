@@ -3,24 +3,52 @@ import { useRouter, useSearchParams } from "next/navigation";
 import SelectField from "./SelectField";
 import RangeField from "./RangeField";
 import { useEffect, useMemo, useState } from "react";
-import deals from './../data/deals.json';
+import { getDeals } from "@/lib/get-region-data";
 import { buildMenusFromDeals } from './../lib/menu-from-deals';
 
-// MENUS: definição dos menus de filtro disponíveis, fora do componente para estabilidade
-const MENUS = buildMenusFromDeals(deals as any);
-
-/** Função pura: monta filtros a partir da string da URL */
-function buildFiltersFromParams(qs: string) {
-  const sp = new URLSearchParams(qs);
-  const next: Record<string, string> = {};
-  MENUS.forEach((m) => {
-    next[m.id] = sp.get(m.id) ?? (String(m.defaultValue) ?? "");
-  });
-  return next;
-}
-
 // Componente principal Hero
-export default function Hero() {
+export default function Hero({ region }: { region: "br" | "eu" }) {
+  // Traduções de textos fixos
+  const dict = {
+    br: {
+      title: "Escolha o seu alerta favorito",
+      sub: "A Fly rastreia milhares de voos diariamente enquanto você descansa",
+      warn: "Atenção! Os preços mostrados podem mudar rapidamente",
+      btnOpen: "Filtrar alertas",
+      btnClose: "Fechar filtros",
+      clear: "Limpar",
+      apply: "Aplicar filtros",
+      priceLabel: "Preço máx.",
+      currency: "R$",
+    },
+    eu: {
+      title: "Choose your favorite alert",
+      sub: "Fly tracks thousands of flights daily while you rest",
+      warn: "Attention! Prices shown may change rapidly",
+      btnOpen: "Filter alerts",
+      btnClose: "Close filters",
+      clear: "Clear",
+      apply: "Apply filters",
+      priceLabel: "Max price",
+      currency: "€",
+    },
+  } as const;
+
+  const t = dict[region];
+
+  // MENUS: definição dos menus de filtro disponíveis, fora do componente para estabilidade
+  const deals = getDeals(region);
+  const MENUS = buildMenusFromDeals(deals as any, region);
+
+  /** Função pura: monta filtros a partir da string da URL */
+  function buildFiltersFromParams(qs: string) {
+    const sp = new URLSearchParams(qs);
+    const next: Record<string, string> = {};
+    MENUS.forEach((m) => {
+      next[m.id] = sp.get(m.id) ?? (String(m.defaultValue) ?? "");
+    });
+    return next;
+  }
   // Hook do Next.js para navegação programática
   const router = useRouter();
   // Hook para acessar os parâmetros da URL
@@ -40,7 +68,7 @@ export default function Hero() {
 
   // Definição dos limites de preço
   const precoLimits = filters["precoRange"].split(",");
-  const [currency, precoMinimo, precoMaximo] = ["R$", Number(precoLimits[0]), Number(precoLimits[1])];
+  const [currency, precoMinimo, precoMaximo] = [t.currency, Number(precoLimits[0]), Number(precoLimits[1])];
   // Estado do preço máximo selecionado
   const [precoMax, setPrecoMax] = useState(precoMaximo);
 
@@ -100,18 +128,17 @@ export default function Hero() {
       <div className="mx-auto max-w-7xl pt-12 pb-0 sm:pt-16 sm:pb-0 text-center">
         {/* Headline principal */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-          Escolha o seu alerta favorito
+          {t.title}
         </h1>
 
         {/* Subheadline explicativa */}
         <p className="mt-4 text-base sm:text-lg opacity-90 font-bold">
-          A Fly rastreia milhares de voos diariamente enquanto você descansa
+          {t.sub}
         </p>
         <p style={{ backgroundColor: 'rgb(59, 130, 246)' }} className="relative z-10 mt-4 text-base sm:text-lg font-bold
         border border-slate-200 p-4 max-w-2xl text-center mx-auto rounded-2xl
         text-white shadow-md">
-          ATENÇÃO! <br />
-          Os preços mostrados podem mudar rapidamente<br />
+          {t.warn}
         </p>
 
         <section id="form" className="relative w-full text-white">
@@ -125,7 +152,7 @@ export default function Hero() {
                 hover:from-blue-600 hover:via-blue-600 hover:to-blue-600
                 transition-all duration-300"
             >
-              {showFilters ? "Fechar filtros" : "Filtrar alertas"}
+              {showFilters ? t.btnClose : t.btnOpen}
             </button>
 
             {/* Painel de filtros (formulário) */}
@@ -156,7 +183,7 @@ export default function Hero() {
                 <div className="mt-6 items-center justify-center mx-auto">
                   <RangeField
                     id="precoMax"
-                    label="Preço máx."
+                    label={t.priceLabel}
                     min={precoMinimo}
                     max={precoMaximo}
                     step={10}
@@ -173,14 +200,14 @@ export default function Hero() {
                     onClick={resetFilters}
                     className="rounded-2xl px-5 py-2 font-medium border hover:bg-gray-100 transition"
                   >
-                    Limpar
+                    {t.clear}
                   </button>
                   <button
                     type="button" // Evita submit implícito
                     onClick={applyFilters}
                     className="rounded-2xl px-5 py-2 font-medium bg-blue-500 text-white hover:bg-blue-600 transition"
                   >
-                    Aplicar filtros
+                    {t.apply}
                   </button>
                 </div>
               </form>
