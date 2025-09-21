@@ -43,18 +43,40 @@ const gradientByColor: Record<string, string> = {
   gray: "bg-gradient-to-r from-gray-400 to-gray-400 hover:from-gray-500 hover:to-gray-300",
 };
 
-function translateDate(dateStr: string, translateTo: string): string {
+function translateDate(dateStr: string, region: "br" | "eu"): string {
   const date = new Date(dateStr);
+  const translateTo = region === "br" ? 'pt-BR' : 'en-GB';
   let newDate = date.toLocaleDateString(translateTo, { day: '2-digit', month: 'short', year: 'numeric' }).replace(".", "").replace(" de ", " ");
   // Capitalize first letter of month
   newDate = newDate.replace(/(\d{2}) (\w)(\w+)/, (match, d, m1, mRest) => `${d} ${m1.toUpperCase()}${mRest}`);
   return newDate;
 }
 
+export default function AlertCard(p: Props & { region: "br" | "eu" }) {
+  const { region } = p;
+  const LOCALE_BY_REGION = { br: "pt-BR", eu: "en" } as const;
 
+  function rtAgo(n: number, unit: Intl.RelativeTimeFormatUnit, region: "br"|"eu") {
+    const rtf = new Intl.RelativeTimeFormat(LOCALE_BY_REGION[region], { numeric: "auto" });
 
-
-export default function AlertCard(p: Props) {
+    return rtf.format(-n, unit);
+  }
+  // Traduções de textos fixos
+  const dict = {
+    br: {
+      from: "Ida",
+      to: "Volta",
+      priceOn: "Preço em",
+      OpenDeal: "Abrir achado"
+    },
+    eu: {
+     from: "From",
+     to: "To",
+     priceOn: "Price on",
+     OpenDeal: "Open deal"
+    },
+  } as const;
+  const t = dict[region];
   const elapsedTime = elapsedDays(p.found_at);
   const color = ratingColor(p.found_at);
   const buttonColor = openLinkColor(p.found_at);
@@ -88,14 +110,14 @@ export default function AlertCard(p: Props) {
 
         {/* Ida / Volta in the same grid*/}
         <span className="text-xs text-slate-500 font-normal">Ida:</span>
-        <span className="text-sm text-slate-600">{translateDate(p.depart, 'pt-BR')}</span>
+        <span className="text-sm text-slate-600">{translateDate(p.depart, region)}</span>
 
         <span className="text-xs text-slate-500 font-normal">Volta:</span>
-        <span className="text-sm text-slate-600">{translateDate(p.return, 'pt-BR')}</span>
+        <span className="text-sm text-slate-600">{translateDate(p.return, region)}</span>
       </div>
       {/* Score */}
       <span className={`sm:hidden inline-flex w-fit px-2 py-0.5 mt-2 rounded-full text-white font-medium ${color}`}>
-        {elapsedTime >= 1 ? elapsedTime === 1 ? "Há 1 dia" : "Há " + elapsedTime.toString() + " dias" : "Hoje"}
+        {rtAgo(elapsedTime, "day", region)}
       </span>
 
       {/* CONFIGURE CARD FOR DESKTOP (sm+) */}
@@ -103,17 +125,17 @@ export default function AlertCard(p: Props) {
                     [&>span]:inline sm:[&>span]:whitespace-nowrap
                       sm:[&>span:not(:last-child)]:after:content-['•']
                       sm:[&>span:not(:last-child)]:after:mx-1">
-          <span>Ida: {translateDate(p.depart, 'pt-BR')}</span>
-          <span>Volta: {translateDate(p.return, 'pt-BR')}</span>
+          <span>{t.from}: {translateDate(p.depart, region)}</span>
+          <span>{t.to}: {translateDate(p.return, region)}</span>
           <span className={`px-2 py-0.5 rounded-full text-white font-medium ${color} inline-flex w-fit`}>
-            {elapsedTime >= 1 ? elapsedTime === 1 ? "Há 1 dia" : "Há " + elapsedTime.toString() + " dias" : "Hoje"}
+            {rtAgo(elapsedTime, "day", region)}
           </span>
         </p>
       </div>
     <div className="self-center flex flex-col items-center justify-center text-center">
     <div className="text-xl sm:text-2xl font-bold leading-tight">
         {p.currency} {p.price}
-        <p className="text-slate-600 font-light text-[0.5rem] sm:text-xs md:text-sm lg:text-[0.7rem]">Preço em {translateDate(p.found_at, 'pt-BR')}</p>
+        <p className="text-slate-600 font-light text-[0.5rem] sm:text-xs md:text-sm lg:text-[0.7rem]">{t.priceOn} {translateDate(p.found_at, region)}</p>
     </div>
 
     <Link
@@ -134,7 +156,7 @@ export default function AlertCard(p: Props) {
       }
       }}
     >
-      Abrir achado
+      {t.OpenDeal}
       <span aria-hidden="true">→</span>
     </Link>
     </div>

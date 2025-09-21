@@ -41,9 +41,6 @@ export default async function BRpage({
           </Suspense>
         </div>
       </section>
-
-      {/* FOOTER */}
-      <Footer />
     </div>
   );
 }

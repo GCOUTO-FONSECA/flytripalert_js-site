@@ -3,9 +3,39 @@ import Link from "next/link";
 import { Mail, ArrowUp } from "lucide-react";
 import { SiInstagram } from "react-icons/si";
 
-export default function Footer() {
-  const year = new Date().getFullYear();
+type Region = "eu" | "br";
 
+export default function Footer({ region }: { region: Region }) {
+  const year = new Date().getFullYear();
+  // Traduções de textos fixos
+  const dict = {
+    br: {
+      slogan: "Feito para viajantes inteligentes",
+      contact: "Contato",
+      backToTop: "Voltar ao topo",
+      explore: "Explorar",
+      allAlerts: "Todos os Alertas",
+      alertsToday: "Alertas de hoje",
+      stayUpdated: "Fique por dentro",
+      pricesChange: "Preços mudam rápido, salve o site e acompanhe os achados.",
+      seeAlerts: "Ver alertas",
+      copyright: "FlyTripAlert. Todos os direitos reservados."
+    },
+    eu: {
+      slogan: "Made for smart travelers",
+      contact: "Contact",
+      backToTop: "Back to top",
+      explore: "Explore",
+      allAlerts: "All Alerts",
+      alertsToday: "Today's Alerts",
+      stayUpdated: "Stay Updated",
+      pricesChange: "Prices change quickly, save the site and keep track of the finds.",
+      seeAlerts: "See Alerts",
+      copyright: "FlyTripAlert. All rights reserved."
+    },
+  } as const;
+
+  const t = dict[region];
   return (
     <footer className="mt-16 bg-slate-50 text-slate-700">
       {/* faixa superior em gradiente */}
@@ -19,7 +49,7 @@ export default function Footer() {
               FlyTripAlert
             </Link>
             <p className="mt-2 text-sm text-slate-600">
-              Feito para viajantes inteligentes
+              {t.slogan}
             </p>
             <div className="mt-4 flex items-center gap-3 text-center">
               <Link
@@ -36,25 +66,25 @@ export default function Footer() {
                 aria-label="Enviar email para contato"
               >
                 <Mail className="h-4 w-4" />
-                Contato
+                {t.contact}
               </Link>
             </div>
           </div>
 
           {/* navegação principal */}
           <nav aria-label="Navegação" className="text-sm">
-            <h4 className="mb-3 font-semibold text-slate-900">Explorar</h4>
+            <h4 className="mb-3 font-semibold text-slate-900">{t.explore}</h4>
             <ul className="space-y-2">
-              <li><Link href="/#alerts" className="hover:text-blue-600">Todos os Alertas</Link></li>
-              <li><Link href="/?page=1&periodo=24h" className="hover:text-blue-600">Alertas de hoje</Link></li>
+              <li><Link href="/#alerts" className="hover:text-blue-600">{t.allAlerts}</Link></li>
+              <li><Link href="/?page=1&periodo=24h" className="hover:text-blue-600">{t.alertsToday}</Link></li>
             </ul>
           </nav>
 
           {/* chamada rápida */}
           <div className="text-sm">
-            <h4 className="mb-3 font-semibold text-slate-900">Fique por dentro</h4>
+            <h4 className="mb-3 font-semibold text-slate-900">{t.stayUpdated}</h4>
             <p className="text-slate-600">
-              Preços mudam rápido, salve o site e acompanhe os achados.
+              {t.pricesChange}
             </p>
             <Link
               href="/#alerts"
@@ -63,7 +93,7 @@ export default function Footer() {
                          font-semibold text-white shadow-sm hover:from-blue-600 hover:to-indigo-500
                          focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
             >
-              Ver alertas
+              {t.seeAlerts}
             </Link>
           </div>
         </div>
@@ -71,7 +101,7 @@ export default function Footer() {
         {/* barra final */}
         <div className="mt-8 border-t border-slate-200 pt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-slate-500">
-            © {year} FlyTripAlert. Todos os direitos reservados.
+            © {year} FlyTripAlert. {t.copyright}
           </p>
           <Link
             href="#"
@@ -79,7 +109,7 @@ export default function Footer() {
             aria-label="Voltar ao topo"
           >
             <ArrowUp className="h-4 w-4" />
-            Topo
+            {t.backToTop}
           </Link>
         </div>
       </div>

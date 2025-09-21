@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     default: "FlyTripAlert",
     template: "%s • FlyTripAlert",
   },
+  
   description: "Alertas de passagens aéreas",
   themeColor: "#ffffff",
   manifest: "/icons/site.webmanifest",
@@ -37,8 +38,6 @@ export const metadata: Metadata = {
     ],
   },
 };
-
-
 
 import { ReactNode } from "react";
 

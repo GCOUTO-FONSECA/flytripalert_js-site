@@ -41,9 +41,6 @@ export default async function EUpage({
           </Suspense>
         </div>
       </section>
-
-      {/* FOOTER */}
-      <Footer />
     </div>
   );
 }

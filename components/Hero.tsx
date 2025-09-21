@@ -13,7 +13,7 @@ export default function Hero({ region }: { region: "br" | "eu" }) {
     br: {
       title: "Escolha o seu alerta favorito",
       sub: "A Fly rastreia milhares de voos diariamente enquanto você descansa",
-      warn: "Atenção! Os preços mostrados podem mudar rapidamente",
+      warnLines: ["Atenção!", "Os preços mostrados podem mudar rapidamente"],
       btnOpen: "Filtrar alertas",
       btnClose: "Fechar filtros",
       clear: "Limpar",
@@ -24,7 +24,7 @@ export default function Hero({ region }: { region: "br" | "eu" }) {
     eu: {
       title: "Choose your favorite alert",
       sub: "Fly tracks thousands of flights daily while you rest",
-      warn: "Attention! Prices shown may change rapidly",
+      warnLines: ["Attention!", "Prices shown may change rapidly"],
       btnOpen: "Filter alerts",
       btnClose: "Close filters",
       clear: "Clear",
@@ -138,7 +138,12 @@ export default function Hero({ region }: { region: "br" | "eu" }) {
         <p style={{ backgroundColor: 'rgb(59, 130, 246)' }} className="relative z-10 mt-4 text-base sm:text-lg font-bold
         border border-slate-200 p-4 max-w-2xl text-center mx-auto rounded-2xl
         text-white shadow-md">
-          {t.warn}
+          {t.warnLines.map((line, index) => (
+            <span key={index}>
+              {line}
+              {index < t.warnLines.length - 1 && <br />}
+            </span>
+          ))}
         </p>
 
         <section id="form" className="relative w-full text-white">

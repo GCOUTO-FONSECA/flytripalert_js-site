@@ -26,6 +26,17 @@ export default function AlertsSection({
     searchParams?: { [key: string]: string | string[] | undefined };
     region: "br" | "eu";
     }) {
+    // Traduções de textos fixos
+    const dict = {
+      br: {
+        notfound: " Nenhum alerta encontrado para os filtros selecionados.",
+      },
+      eu: {
+        notfound: " No alerts found for the selected filters.",
+      },
+    } as const;
+
+    const t = dict[region];
     // definir tamanho das paginas
     const PAGE_SIZE = 10;
     // ler alertas em data/deals.json
@@ -91,12 +102,12 @@ export default function AlertsSection({
     <div>
       {total === 0 ? (
         <div className="py-8 text-center text-slate-500">
-          Nenhum alerta encontrado para os filtros selecionados.
+          {t.notfound}
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:gap-6">
           {alertsVisible.map((a, i) => (
-            <AlertCard key={a.id + i} {...a} />
+            <AlertCard key={a.id + i} {...a} region={region} />
           ))}
         </div>
       )}
