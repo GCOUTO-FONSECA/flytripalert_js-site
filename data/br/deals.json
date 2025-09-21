@@ -1,5 +1,44 @@
 [
   {
+    "id": "br_sao_paulo-buenos_aires-21_sep_2025",
+    "from": "Sao Paulo",
+    "to": "Buenos Aires (Argentina)",
+    "price": 1110,
+    "currency": "R$",
+    "class": "Econômica",
+    "depart": "30 Sep 2025",
+    "return": "10 Oct 2025",
+    "days": 10,
+    "found_at": "21 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/XH52jZRFAeATZ4E18"
+  },
+  {
+    "id": "br_rio_de_janeiro-buenos_aires-21_sep_2025",
+    "from": "Rio de Janeiro",
+    "to": "Buenos Aires (Argentina)",
+    "price": 1340,
+    "currency": "R$",
+    "class": "Econômica",
+    "depart": "22 Jun 2026",
+    "return": "02 Jul 2026",
+    "days": 10,
+    "found_at": "21 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/MFmkdjCZdrRwhTK36"
+  },
+  {
+    "id": "br_porto_alegre-santiago-21_sep_2025",
+    "from": "Porto Alegre",
+    "to": "Santiago (Chile)",
+    "price": 1420,
+    "currency": "R$",
+    "class": "Econômica",
+    "depart": "07 Jun 2026",
+    "return": "17 Jun 2026",
+    "days": 10,
+    "found_at": "21 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/4izH2ngAEpmqS1mSA"
+  },
+  {
     "id": "br_sao_paulo-tokyo-20_sep_2025",
     "from": "Sao Paulo",
     "to": "Tokyo (Japan)",
