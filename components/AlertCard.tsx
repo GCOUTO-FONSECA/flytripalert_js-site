@@ -57,7 +57,7 @@ export default function AlertCard(p: Props & { region: "br" | "eu" }) {
   const LOCALE_BY_REGION = { br: "pt-BR", eu: "en" } as const;
 
   function rtAgo(n: number, unit: Intl.RelativeTimeFormatUnit, region: "br"|"eu") {
-    const rtf = new Intl.RelativeTimeFormat(LOCALE_BY_REGION[region], { numeric: "auto" });
+    const rtf = new Intl.RelativeTimeFormat(LOCALE_BY_REGION[region], { numeric: "always" });
 
     return rtf.format(-n, unit);
   }
