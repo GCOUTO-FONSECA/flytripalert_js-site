@@ -58,8 +58,11 @@ export default function AlertCard(p: Props & { region: "br" | "eu" }) {
 
   function rtAgo(n: number, unit: Intl.RelativeTimeFormatUnit, region: "br"|"eu") {
     const rtf = new Intl.RelativeTimeFormat(LOCALE_BY_REGION[region], { numeric: "always" });
-
-    return rtf.format(-n, unit);
+    if (n === 0) {
+      return region === "br" ? "hoje" : "today";
+    } else {
+      return rtf.format(-n, unit);
+    }
   }
   // Traduções de textos fixos
   const dict = {
