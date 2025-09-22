@@ -1,6 +1,162 @@
 [
   {
-    "id": "br_rome-boston-21_sep_2025",
+    "id": "eu_london-santorini-22_sep_2025",
+    "from": "London",
+    "to": "Santorini (Greece)",
+    "price": 124,
+    "currency": "€",
+    "class": "Economy",
+    "depart": "29 Sep 2025",
+    "return": "09 Oct 2025",
+    "days": 10,
+    "found_at": "22 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/nQHkHkiBYo7ZitpC6"
+  },
+  {
+    "id": "eu_london-mykonos-22_sep_2025",
+    "from": "London",
+    "to": "Mykonos (Greece)",
+    "price": 132,
+    "currency": "€",
+    "class": "Economy",
+    "depart": "28 Sep 2025",
+    "return": "08 Oct 2025",
+    "days": 10,
+    "found_at": "22 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/3dJrHaznEUeKZqrF9"
+  },
+  {
+    "id": "eu_london-tunis-22_sep_2025",
+    "from": "London",
+    "to": "Tunis (Tunisia)",
+    "price": 158,
+    "currency": "€",
+    "class": "Economy",
+    "depart": "29 Sep 2025",
+    "return": "09 Oct 2025",
+    "days": 10,
+    "found_at": "22 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/St5mk7XDdLvznpsC6"
+  },
+  {
+    "id": "eu_paris-mykonos-22_sep_2025",
+    "from": "Paris",
+    "to": "Mykonos (Greece)",
+    "price": 180,
+    "currency": "€",
+    "class": "Economy",
+    "depart": "28 Jun 2026",
+    "return": "08 Jul 2026",
+    "days": 10,
+    "found_at": "22 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/vqoUQtwz2BdE7ZTn9"
+  },
+  {
+    "id": "eu_paris-santorini-22_sep_2025",
+    "from": "Paris",
+    "to": "Santorini (Greece)",
+    "price": 191,
+    "currency": "€",
+    "class": "Economy",
+    "depart": "21 Jun 2026",
+    "return": "01 Jul 2026",
+    "days": 10,
+    "found_at": "22 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/R8SETT5vTafEPFYs7"
+  },
+  {
+    "id": "eu_paris-cairo-22_sep_2025",
+    "from": "Paris",
+    "to": "Cairo (Egypt)",
+    "price": 221,
+    "currency": "€",
+    "class": "Economy",
+    "depart": "17 Jun 2026",
+    "return": "27 Jun 2026",
+    "days": 10,
+    "found_at": "22 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/iJx4CmfG2JzSKa9A8"
+  },
+  {
+    "id": "eu_amsterdam-mykonos-22_sep_2025",
+    "from": "Amsterdam",
+    "to": "Mykonos (Greece)",
+    "price": 166,
+    "currency": "€",
+    "class": "Economy",
+    "depart": "24 Jun 2026",
+    "return": "04 Jul 2026",
+    "days": 10,
+    "found_at": "22 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/dsxcu43PNZc4p4uV6"
+  },
+  {
+    "id": "eu_amsterdam-santorini-22_sep_2025",
+    "from": "Amsterdam",
+    "to": "Santorini (Greece)",
+    "price": 180,
+    "currency": "€",
+    "class": "Economy",
+    "depart": "26 Jun 2026",
+    "return": "06 Jul 2026",
+    "days": 10,
+    "found_at": "22 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/79D7aELn1TW6QNjy8"
+  },
+  {
+    "id": "eu_amsterdam-tunis-22_sep_2025",
+    "from": "Amsterdam",
+    "to": "Tunis (Tunisia)",
+    "price": 259,
+    "currency": "€",
+    "class": "Economy",
+    "depart": "08 Jun 2026",
+    "return": "18 Jun 2026",
+    "days": 10,
+    "found_at": "22 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/7vjZRZrboE3nQo6eA"
+  },
+  {
+    "id": "eu_madrid-tunis-22_sep_2025",
+    "from": "Madrid",
+    "to": "Tunis (Tunisia)",
+    "price": 164,
+    "currency": "€",
+    "class": "Economy",
+    "depart": "18 Jun 2026",
+    "return": "28 Jun 2026",
+    "days": 10,
+    "found_at": "22 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/5Qs4QHSzJKwMfv3RA"
+  },
+  {
+    "id": "eu_madrid-cairo-22_sep_2025",
+    "from": "Madrid",
+    "to": "Cairo (Egypt)",
+    "price": 189,
+    "currency": "€",
+    "class": "Economy",
+    "depart": "08 Jun 2026",
+    "return": "18 Jun 2026",
+    "days": 10,
+    "found_at": "22 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/TooZXj7Db4aH8CCM7"
+  },
+  {
+    "id": "eu_madrid-santorini-22_sep_2025",
+    "from": "Madrid",
+    "to": "Santorini (Greece)",
+    "price": 192,
+    "currency": "€",
+    "class": "Economy",
+    "depart": "19 Jun 2026",
+    "return": "29 Jun 2026",
+    "days": 10,
+    "found_at": "22 Sep 2025",
+    "link": "https://www.google.com/travel/flights/s/4mpjA9iakT8TgVNL8"
+  },
+  {
+    "id": "eu_rome-boston-21_sep_2025",
     "from": "Rome",
     "to": "Boston (United States)",
     "price": 280,
@@ -13,7 +169,7 @@
     "link": "https://www.google.com/travel/flights/s/1qk69gzxA8ApmZkb9"
   },
   {
-    "id": "br_rome-new_york-21_sep_2025",
+    "id": "eu_rome-new_york-21_sep_2025",
     "from": "Rome",
     "to": "New York (United States)",
     "price": 314,
@@ -26,7 +182,7 @@
     "link": "https://www.google.com/travel/flights/s/gjhxqDytKEyJNFPW7"
   },
   {
-    "id": "br_rome-los_angeles-21_sep_2025",
+    "id": "eu_rome-los_angeles-21_sep_2025",
     "from": "Rome",
     "to": "Los Angeles (United States)",
     "price": 352,
@@ -39,7 +195,7 @@
     "link": "https://www.google.com/travel/flights/s/gcTm4jBhJTrvNQdf9"
   },
   {
-    "id": "br_madrid-new_york-21_sep_2025",
+    "id": "eu_madrid-new_york-21_sep_2025",
     "from": "Madrid",
     "to": "New York (United States)",
     "price": 331,
@@ -52,7 +208,7 @@
     "link": "https://www.google.com/travel/flights/s/KTMPzxHD9kt4Hfyh9"
   },
   {
-    "id": "br_madrid-miami-21_sep_2025",
+    "id": "eu_madrid-miami-21_sep_2025",
     "from": "Madrid",
     "to": "Miami (United States)",
     "price": 367,
@@ -65,7 +221,7 @@
     "link": "https://www.google.com/travel/flights/s/ATNSWvjxzii2LRyS8"
   },
   {
-    "id": "br_madrid-boston-21_sep_2025",
+    "id": "eu_madrid-boston-21_sep_2025",
     "from": "Madrid",
     "to": "Boston (United States)",
     "price": 367,
@@ -78,7 +234,7 @@
     "link": "https://www.google.com/travel/flights/s/BeSiq4N7GKzSN5Zs8"
   },
   {
-    "id": "br_frankfurt_am_main-new_york-21_sep_2025",
+    "id": "eu_frankfurt_am_main-new_york-21_sep_2025",
     "from": "Frankfurt am Main",
     "to": "New York (United States)",
     "price": 360,
@@ -91,7 +247,7 @@
     "link": "https://www.google.com/travel/flights/s/464Fy9UfzbD4o3jU7"
   },
   {
-    "id": "br_frankfurt_am_main-boston-21_sep_2025",
+    "id": "eu_frankfurt_am_main-boston-21_sep_2025",
     "from": "Frankfurt am Main",
     "to": "Boston (United States)",
     "price": 370,
@@ -104,7 +260,7 @@
     "link": "https://www.google.com/travel/flights/s/j4Sicc3XPkzRoepy8"
   },
   {
-    "id": "br_amsterdam-washington-21_sep_2025",
+    "id": "eu_amsterdam-washington-21_sep_2025",
     "from": "Amsterdam",
     "to": "Washington (United States)",
     "price": 354,
@@ -117,7 +273,7 @@
     "link": "https://www.google.com/travel/flights/s/LEP5Axn497V2EMsh7"
   },
   {
-    "id": "br_amsterdam-miami-21_sep_2025",
+    "id": "eu_amsterdam-miami-21_sep_2025",
     "from": "Amsterdam",
     "to": "Miami (United States)",
     "price": 397,
