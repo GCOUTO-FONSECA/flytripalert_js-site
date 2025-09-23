@@ -16,8 +16,8 @@ type Props = {
 
 const ratingColor = (found_at: string): string => {
   const diffdays: number = elapsedDays(found_at);
-  if (diffdays < 1) return "bg-green-500 text-white"; // verde se até 1 dia
-  if (diffdays >= 1 && diffdays < 3) return "bg-orange-400 text-white"; // laranja se até 3 dias
+  if (diffdays <= 1) return "bg-green-500 text-white"; // verde se até 1 dia
+  if (diffdays > 1 && diffdays < 3) return "bg-orange-400 text-white"; // laranja se até 3 dias
   if (diffdays >= 3 && diffdays < 7) return "bg-yellow-400 text-gray-800"; // amarelo se até 7 dias
   if (diffdays >= 7) return "bg-gray-300 text-gray-800"; // cinza se mais de 7 dias
   else return "bg-gray-300 text-gray-800"; // padrão cinza
