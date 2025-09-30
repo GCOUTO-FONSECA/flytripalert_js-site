@@ -156,19 +156,6 @@
     "link": "https://www.google.com/travel/flights/s/EHuxxEWtUZKVSt599"
   },
   {
-    "id": "br_rio_de_janeiro-san_juan-30_sep_2025",
-    "from": "Rio de Janeiro",
-    "to": "San Juan (Puerto Rico)",
-    "price": 2520,
-    "currency": "R$",
-    "class": "Econômica",
-    "depart": "24 Apr 2026",
-    "return": "04 May 2026",
-    "days": 10,
-    "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/yhX7JGdaHH2WdLvc6"
-  },
-  {
     "id": "br_belo_horizonte-san_jose-30_sep_2025",
     "from": "Belo Horizonte",
     "to": "San Jose (Costa Rica)",
@@ -179,26 +166,13 @@
     "return": "01 Nov 2025",
     "days": 10,
     "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/g32TWahrg4qKvUVZA"
-  },
-  {
-    "id": "br_belo_horizonte-panama_city-30_sep_2025",
-    "from": "Belo Horizonte",
-    "to": "Panama City (Panama)",
-    "price": 2120,
-    "currency": "R$",
-    "class": "Econômica",
-    "depart": "16 Nov 2025",
-    "return": "26 Nov 2025",
-    "days": 10,
-    "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/tXBbVVUjbmef8x8F6"
+    "link": "https://www.google.com/travel/flights/s/iWUJ951ApmmhYR1z5"
   },
   {
     "id": "br_belo_horizonte-oranjestad-30_sep_2025",
     "from": "Belo Horizonte",
     "to": "Oranjestad (Aruba)",
-    "price": 2160,
+    "price": 2322,
     "currency": "R$",
     "class": "Econômica",
     "depart": "05 Nov 2025",
@@ -231,20 +205,7 @@
     "return": "21 Mar 2026",
     "days": 10,
     "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/gR5u3VWWuheiLi2RA"
-  },
-  {
-    "id": "br_belo_horizonte-cusco-30_sep_2025",
-    "from": "Belo Horizonte",
-    "to": "Cusco (Peru)",
-    "price": 2650,
-    "currency": "R$",
-    "class": "Econômica",
-    "depart": "01 Dec 2025",
-    "return": "11 Dec 2025",
-    "days": 10,
-    "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/Mzfj8wgisbNFcna26"
+    "link": "https://www.google.com/travel/flights/s/inU8PGzvbuX9PwUA8"
   },
   {
     "id": "br_belo_horizonte-willemstad-30_sep_2025",
@@ -270,7 +231,7 @@
     "return": "27 Nov 2025",
     "days": 10,
     "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/AVwtBia8BwPWJv1X6"
+    "link": "https://www.google.com/travel/flights/s/ctpA9sCPtdsQz2jq5"
   },
   {
     "id": "br_porto_alegre-lima-30_sep_2025",
@@ -297,19 +258,6 @@
     "days": 10,
     "found_at": "30 Sep 2025",
     "link": "https://www.google.com/travel/flights/s/yLBnS3UKaw7LhbpA7"
-  },
-  {
-    "id": "br_porto_alegre-panama_city-30_sep_2025",
-    "from": "Porto Alegre",
-    "to": "Panama City (Panama)",
-    "price": 2360,
-    "currency": "R$",
-    "class": "Econômica",
-    "depart": "22 Nov 2025",
-    "return": "02 Dec 2025",
-    "days": 10,
-    "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/nMrrR6LjSKeWy88eA"
   },
   {
     "id": "br_porto_alegre-cusco-30_sep_2025",
@@ -361,7 +309,7 @@
     "return": "27 Nov 2025",
     "days": 10,
     "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/GDUwNJba3vQGPvDg9"
+    "link": "https://www.google.com/travel/flights/s/cxW3Nxq9GZPJdSJBA"
   },
   {
     "id": "br_brasilia-san_juan-30_sep_2025",
@@ -406,40 +354,27 @@
     "id": "br_brasilia-cancun-30_sep_2025",
     "from": "Brasilia",
     "to": "Cancun (Mexico)",
-    "price": 2190,
+    "price": 2240,
     "currency": "R$",
     "class": "Econômica",
     "depart": "08 Nov 2025",
     "return": "18 Nov 2025",
     "days": 10,
     "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/rL255QtPEG4G1Zea8"
+    "link": "https://www.google.com/travel/flights/s/GTrfrGdGh9DJqegA6"
   },
   {
     "id": "br_brasilia-oranjestad-30_sep_2025",
     "from": "Brasilia",
     "to": "Oranjestad (Aruba)",
-    "price": 2320,
+    "price": 2360,
     "currency": "R$",
     "class": "Econômica",
     "depart": "06 May 2026",
     "return": "16 May 2026",
     "days": 10,
     "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/iZF6pbqoKvzA9rD47"
-  },
-  {
-    "id": "br_brasilia-panama_city-30_sep_2025",
-    "from": "Brasilia",
-    "to": "Panama City (Panama)",
-    "price": 2430,
-    "currency": "R$",
-    "class": "Econômica",
-    "depart": "04 Nov 2025",
-    "return": "14 Nov 2025",
-    "days": 10,
-    "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/Utqn2htP2UQWnBfj7"
+    "link": "https://www.google.com/travel/flights/s/QQUhDE2p5yUv6pKE9"
   },
   {
     "id": "br_sao_paulo-madrid-30_sep_2025",
@@ -471,7 +406,7 @@
     "id": "br_sao_paulo-porto-30_sep_2025",
     "from": "Sao Paulo",
     "to": "Porto (Portugal)",
-    "price": 3010,
+    "price": 2980,
     "currency": "R$",
     "class": "Econômica",
     "depart": "25 Feb 2026",
@@ -492,19 +427,6 @@
     "days": 10,
     "found_at": "30 Sep 2025",
     "link": "https://www.google.com/travel/flights/s/up7TQtJcN3oLCEES7"
-  },
-  {
-    "id": "br_sao_paulo-milan-30_sep_2025",
-    "from": "Sao Paulo",
-    "to": "Milan (Italy)",
-    "price": 3310,
-    "currency": "R$",
-    "class": "Econômica",
-    "depart": "24 Jan 2026",
-    "return": "03 Feb 2026",
-    "days": 10,
-    "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/zshZHhT1kLu7E19B6"
   },
   {
     "id": "br_sao_paulo-paris-30_sep_2025",
@@ -544,32 +466,6 @@
     "days": 10,
     "found_at": "30 Sep 2025",
     "link": "https://www.google.com/travel/flights/s/gkkSbMocPN4XSHKY6"
-  },
-  {
-    "id": "br_rio_de_janeiro-barcelona-30_sep_2025",
-    "from": "Rio de Janeiro",
-    "to": "Barcelona (Spain)",
-    "price": 3500,
-    "currency": "R$",
-    "class": "Econômica",
-    "depart": "05 Mar 2026",
-    "return": "15 Mar 2026",
-    "days": 10,
-    "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/C8nXex6VCN7rEzEbA"
-  },
-  {
-    "id": "br_rio_de_janeiro-london-30_sep_2025",
-    "from": "Rio de Janeiro",
-    "to": "London (United Kingdom)",
-    "price": 3510,
-    "currency": "R$",
-    "class": "Econômica",
-    "depart": "07 Nov 2025",
-    "return": "17 Nov 2025",
-    "days": 10,
-    "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/BjpZqDMUPRcH7VcG6"
   },
   {
     "id": "br_belo_horizonte-milan-30_sep_2025",
@@ -648,97 +544,6 @@
     "days": 10,
     "found_at": "30 Sep 2025",
     "link": "https://www.google.com/travel/flights/s/qAXEg9H16Qe8HVQ97"
-  },
-  {
-    "id": "br_rio_de_janeiro-barcelona-29_sep_2025",
-    "from": "Rio de Janeiro",
-    "to": "Barcelona (Spain)",
-    "price": 3510,
-    "currency": "R$",
-    "class": "Econômica",
-    "depart": "05 Dec 2025",
-    "return": "15 Dec 2025",
-    "days": 10,
-    "found_at": "29 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/fd9d2yv8BoTLrXyPA"
-  },
-  {
-    "id": "br_sao_paulo-lisbon-30_sep_2025",
-    "from": "Sao Paulo",
-    "to": "Lisbon (Portugal)",
-    "price": 3190,
-    "currency": "R$",
-    "class": "Econômica",
-    "depart": "04 Mar 2026",
-    "return": "14 Mar 2026",
-    "days": 10,
-    "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/up7TQtJcN3oLCEES7"
-  },
-  {
-    "id": "br_sao_paulo-milan-30_sep_2025",
-    "from": "Sao Paulo",
-    "to": "Milan (Italy)",
-    "price": 3310,
-    "currency": "R$",
-    "class": "Econômica",
-    "depart": "24 Jan 2026",
-    "return": "03 Feb 2026",
-    "days": 10,
-    "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/zshZHhT1kLu7E19B6"
-  },
-  {
-    "id": "br_sao_paulo-paris-30_sep_2025",
-    "from": "Sao Paulo",
-    "to": "Paris (France)",
-    "price": 3410,
-    "currency": "R$",
-    "class": "Econômica",
-    "depart": "11 Nov 2025",
-    "return": "21 Nov 2025",
-    "days": 10,
-    "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/95pWePzKju1UHFiSA"
-  },
-  {
-    "id": "br_sao_paulo-rome-30_sep_2025",
-    "from": "Sao Paulo",
-    "to": "Rome (Italy)",
-    "price": 3460,
-    "currency": "R$",
-    "class": "Econômica",
-    "depart": "19 Apr 2026",
-    "return": "29 Apr 2026",
-    "days": 10,
-    "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/p3GjmRrnFDfdMYs68"
-  },
-  {
-    "id": "br_rio_de_janeiro-madrid-30_sep_2025",
-    "from": "Rio de Janeiro",
-    "to": "Madrid (Spain)",
-    "price": 3230,
-    "currency": "R$",
-    "class": "Econômica",
-    "depart": "14 Mar 2026",
-    "return": "24 Mar 2026",
-    "days": 10,
-    "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/gkkSbMocPN4XSHKY6"
-  },
-  {
-    "id": "br_rio_de_janeiro-barcelona-30_sep_2025",
-    "from": "Rio de Janeiro",
-    "to": "Barcelona (Spain)",
-    "price": 3500,
-    "currency": "R$",
-    "class": "Econômica",
-    "depart": "05 Mar 2026",
-    "return": "15 Mar 2026",
-    "days": 10,
-    "found_at": "30 Sep 2025",
-    "link": "https://www.google.com/travel/flights/s/C8nXex6VCN7rEzEbA"
   },
   {
     "id": "br_rio_de_janeiro-london-30_sep_2025",
