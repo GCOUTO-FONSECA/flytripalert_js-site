@@ -211,14 +211,14 @@
     "id": "br_belo_horizonte-orlando-25_nov_2025",
     "from": "Belo Horizonte",
     "to": "Orlando (United States)",
-    "price": 2680,
+    "price": 2560,
     "currency": "R$",
     "class": "Econômica",
-    "depart": "27 Feb 2026",
-    "return": "09 Mar 2026",
+    "depart": "08 Mar 2026",
+    "return": "17 Mar 2026",
     "days": 10,
     "found_at": "25 Nov 2025",
-    "link": "https://www.google.com/travel/flights/s/kAvbAzD2h27eTwSy8"
+    "link": "https://www.google.com/travel/flights/s/xVvjhj91QrFRBuAK8"
   },
   {
     "id": "br_belo_horizonte-miami-25_nov_2025",
@@ -276,7 +276,7 @@
     "id": "br_porto_alegre-miami-25_nov_2025",
     "from": "Porto Alegre",
     "to": "Miami (United States)",
-    "price": 2750,
+    "price": 2830,
     "currency": "R$",
     "class": "Econômica",
     "depart": "23 Feb 2026",
